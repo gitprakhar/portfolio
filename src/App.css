@@ -217,6 +217,10 @@ body {
     font-size: 18px;
     text-align: left;
   }
+  
+  .highlight:hover {
+    color: #000;
+  }
 }
 
 @media (min-width: 481px) {
