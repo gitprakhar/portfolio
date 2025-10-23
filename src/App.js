@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="App">
       <div className="container">
         <nav className="navigation">
           <div className="nav-right">
-            <a href="#work" className="nav-link underlined">work</a>
-            <a href="#resume" className="nav-link">resume</a>
-            <a href="#contact" className="nav-link">contact</a>
-            <a href="#play" className="nav-link">play</a>
+            <div className="nav-links">
+              <a href="#work" className="nav-link underlined">work</a>
+              <a href="#resume" className="nav-link">resume</a>
+              <a href="#contact" className="nav-link">contact</a>
+              <a href="#play" className="nav-link">play</a>
+            </div>
+            <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? '×' : '☰'}
+            </div>
+            {isMenuOpen && (
+              <div className="mobile-menu-inline">
+                <div className="mobile-menu-links">
+                  <a href="#work" className="mobile-nav-link underlined">work</a>
+                  <a href="#play" className="mobile-nav-link">play</a>
+                  <a href="#resume" className="mobile-nav-link">resume</a>
+                  <a href="#contact" className="mobile-nav-link">contact</a>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
         
