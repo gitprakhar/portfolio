@@ -11,16 +11,16 @@ function App() {
           <div className="nav-right">
             {!isMenuOpen ? (
               <div className="nav-links">
-                <a href="#work" className="nav-link underlined">work</a>
+                <a href="#ux" className="nav-link underlined">UX</a>
+                <a href="#not-ux" className="nav-link">not UX</a>
                 <a href="#resume" className="nav-link">resume</a>
                 <a href="#contact" className="nav-link">contact</a>
-                <a href="#play" className="nav-link">play</a>
               </div>
             ) : (
               <div className="mobile-menu-inline">
                 <div className="mobile-menu-links">
-                  <a href="#work" className="mobile-nav-link underlined">work</a>
-                  <a href="#play" className="mobile-nav-link">play</a>
+                  <a href="#ux" className="mobile-nav-link underlined">UX</a>
+                  <a href="#not-ux" className="mobile-nav-link">not UX</a>
                   <a href="#resume" className="mobile-nav-link">resume</a>
                   <a href="#contact" className="mobile-nav-link">contact</a>
                 </div>
@@ -37,7 +37,7 @@ function App() {
             <a href="#" className="project-link">Quickbooks <span className="highlight">Developer Portal</span></a>
           </div>
           <div className="project-item">
-            <a href="#" className="project-link"><span className="highlight">Bland Canvas</span>, generative furniture upcycling</a>
+            <a href="#" className="project-link">Generative furniture upcycling with <span className="highlight">Bland Canvas</span></a>
           </div>
           <div className="project-item">
             <a href="#" className="project-link">Intuit <span className="highlight">App Recommendations</span></a>
