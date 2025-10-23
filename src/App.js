@@ -6,9 +6,6 @@ function App() {
     <div className="App">
       <div className="container">
         <nav className="navigation">
-          <div className="nav-left">
-            <span className="nav-name">Prakhar Mittal</span>
-          </div>
           <div className="nav-right">
             <a href="#work" className="nav-link underlined">work</a>
             <a href="#resume" className="nav-link">resume</a>
@@ -19,19 +16,19 @@ function App() {
         
         <main className="main-content">
           <div className="project-item">
-            <a href="#" className="project-link">Quickbooks <span className="highlight">developer dashboard</span></a>
+            <a href="#" className="project-link">Quickbooks <span className="highlight">Developer Portal</span></a>
           </div>
           <div className="project-item">
-            <a href="#" className="project-link"><span className="highlight">Bland Canvas</span> — AI furniture upcycling</a>
+            <a href="#" className="project-link"><span className="highlight">Bland Canvas</span>, generative furniture upcycling</a>
           </div>
           <div className="project-item">
-            <a href="#" className="project-link">Intuit <span className="highlight">app recommendations</span></a>
+            <a href="#" className="project-link">Intuit <span className="highlight">App Recommendations</span></a>
           </div>
           <div className="project-item">
-            <a href="#" className="project-link"><span className="highlight">Potluck</span>, a social music listening app</a>
+            <a href="#" className="project-link">A social music listening app called <span className="highlight">Potluck</span> </a>
           </div>
           <div className="author-description">
-            Prakhar is a product designer and a creative technologist
+            I'm Prakhar, a product designer, and this is some of my work.
           </div>
         </main>
       </div>
