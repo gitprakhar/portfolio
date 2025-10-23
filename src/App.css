@@ -137,14 +137,18 @@ body {
 
 @media (max-width: 480px) {
   .project-item {
-    font-size: 36px;
+    font-size: 28px;
   }
   
   .navigation {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .nav-right {
     gap: 15px;
+  }
+  
+  .author-description {
+    font-size: 18px;
   }
 }
