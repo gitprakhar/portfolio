@@ -54,16 +54,16 @@ function App() {
           <div className="content-container">
             <div className="projects-container">
               <div className="project-item">
-                <a href="#" className="project-link">Intuit <span className="highlight">developer dashboard</span></a>
+                <a href="#" className="project-link">Intuit <span className="highlight">Developer Dashboard</span></a>
               </div>
               <div className="project-item">
-                <a href="#" className="project-link">Upcycling furniture with <span className="highlight">Bland Canvas</span></a>
+                <a href="#" className="project-link">Upcycling Furniture with <span className="highlight">Bland Canvas</span></a>
               </div>
               <div className="project-item">
-                <a href="#" className="project-link">Quickbooks <span className="highlight">app recommendations</span></a>
+                <a href="#" className="project-link">Quickbooks <span className="highlight">App Recommendations</span></a>
               </div>
               <div className="project-item">
-                <a href="#" className="project-link">Social music listening with <span className="highlight">Potluck</span></a>
+                <a href="#" className="project-link">Social Music Listening with <span className="highlight">Potluck</span></a>
               </div>
             </div>
             <div className="author-description">
