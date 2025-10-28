@@ -150,10 +150,10 @@ body {
 }
 
 .project-item {
-  font-size: 52px;
+  font-size: 46px;
   font-family: 'Newsreader', serif;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.2;
   margin: 24px 0;
   color: #000;
   position: relative;
