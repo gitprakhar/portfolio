@@ -148,6 +148,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* left-align the links inside the centered container */
+  justify-content: center; /* vertically center the content in the viewport */
+  min-height: calc(100vh - 80px); /* keep centered area below the top nav */
   position: relative; /* sits above the animated gradient */
   z-index: 1;
 }
@@ -293,7 +295,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 80vh;
   position: relative;
   z-index: 2;
 }
