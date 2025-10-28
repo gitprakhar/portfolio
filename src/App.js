@@ -41,7 +41,7 @@ function App() {
               </div>
             </div>
             <div className="author-description">
-              *Prakhar is a product designer and a creative technologist
+              *Prakhar is a product designer & creative technologist
             </div>
           </div>
         </main>
