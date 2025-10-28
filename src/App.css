@@ -49,7 +49,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 40px;
   font-size: 16px;
   font-family: 'Newsreader', serif;
   position: relative;
@@ -84,8 +84,8 @@ body {
 }
 
 .menu-toggle svg {
-  width: 22px;
-  height: 22px;
+  width:16px;
+  height: 16px;
   display: block;
 }
 
@@ -134,12 +134,12 @@ body {
 .mobile-menu {
   position: fixed;
   inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background: linear-gradient(to bottom, #1EFF00, rgba(30, 255, 0, 0)); /* restore gradient */
   z-index: 9999;
   display: flex;
   justify-content: center; /* vertical centering of the content container */
   align-items: center;     /* vertical centering */
   padding: 0;
+  overflow: hidden; /* contain animated gradient pseudo-element */
 }
 
 .mobile-menu-content {
@@ -149,6 +149,80 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* left-align the links inside the centered container */
+  position: relative; /* sits above the animated gradient */
+  z-index: 1;
+}
+
+/* Animated gradient overlay behind the mobile menu content */
+@keyframes overlayEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(1.02);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.mobile-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #1EFF00, rgba(30, 255, 0, 0));
+  z-index: 0;
+  opacity: 0;
+  transform: translateY(-8px) scale(1.02);
+  animation: overlayEnter 420ms cubic-bezier(.2,.9,.2,1) 40ms both;
+}
+
+/* Enter animation for the mobile menu content */
+@keyframes mobileEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-content {
+  animation: mobileEnter 320ms cubic-bezier(.2,.9,.2,1) 80ms both;
+}
+
+@keyframes linkEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link {
+  opacity: 0; /* start hidden, animation will bring to 1 */
+  transform: translateY(6px);
+  animation: linkEnter 260ms ease both;
+}
+
+/* Stagger the link animations */
+.mobile-menu-links a:nth-child(1) {
+  animation-delay: 140ms;
+}
+.mobile-menu-links a:nth-child(2) {
+  animation-delay: 200ms;
+}
+.mobile-menu-links a:nth-child(3) {
+  animation-delay: 260ms;
+}
+.mobile-menu-links a:nth-child(4) {
+  animation-delay: 320ms;
 }
 
 .mobile-menu-links {
