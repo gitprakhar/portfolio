@@ -13,10 +13,10 @@ function App() {
           </div>
           <div className="nav-right">
             <div className="nav-links">
-              <a href="#work" className="nav-link active">work</a>
-              <a href="#resume" className="nav-link">resume</a>
+              <a href="#product-design" className="nav-link active">UX</a>
+              <a href="#not-product-design" className="nav-link">not UX</a>
               <a href="#contact" className="nav-link">contact</a>
-              <a href="#play" className="nav-link">play</a>
+              <a href="#resume" className="nav-link">resume</a>
             </div>
             <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? '×' : '☰'}
