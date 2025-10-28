@@ -12,23 +12,12 @@ function App() {
             <div className="nav-name">Prakhar*</div>
           </div>
           <div className="nav-right">
-            {!isMenuOpen ? (
-              <div className="nav-links">
-                <a href="#work" className="nav-link active">work</a>
-                <a href="#resume" className="nav-link">resume</a>
-                <a href="#contact" className="nav-link">contact</a>
-                <a href="#play" className="nav-link">play</a>
-              </div>
-            ) : (
-              <div className="mobile-menu-inline">
-                <div className="mobile-menu-links">
-                  <a href="#work" className="mobile-nav-link active">work</a>
-                  <a href="#resume" className="mobile-nav-link">resume</a>
-                  <a href="#contact" className="mobile-nav-link">contact</a>
-                  <a href="#play" className="mobile-nav-link">play</a>
-                </div>
-              </div>
-            )}
+            <div className="nav-links">
+              <a href="#work" className="nav-link active">work</a>
+              <a href="#resume" className="nav-link">resume</a>
+              <a href="#contact" className="nav-link">contact</a>
+              <a href="#play" className="nav-link">play</a>
+            </div>
             <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? '×' : '☰'}
             </div>
