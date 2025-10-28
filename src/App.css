@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;0,700;1,400&display=swap');
 
 * {
   margin: 0;
@@ -18,20 +18,34 @@ body {
   position: relative;
 }
 
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35vh;
+  background: linear-gradient(to bottom, #1EFF00, #F6F5F1);
+  z-index: 1;
+}
+
 
 .container {
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0;
   position: relative;
+  max-width: 1200px;
 }
 
 .navigation {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  font-size: 21px;
+  font-size: 16px;
   font-family: 'Baskervville', serif;
+  position: relative;
+  z-index: 2;
 }
 
 .nav-left {
@@ -40,7 +54,7 @@ body {
 
 .nav-name {
   font-family: 'Baskervville', serif;
-  font-size: 21px;
+  font-size: 16px;
   color: #000;
   font-weight: 400;
 }
@@ -96,9 +110,14 @@ body {
   text-decoration: underline;
 }
 
+.mobile-nav-link.active {
+  font-weight: 700 !important;
+  font-family: 'Baskervville', serif;
+}
+
 
 .nav-link {
-  text-decoration: none;
+  text-decoration: underline;
   color: #000;
   font-weight: 400;
   transition: opacity 0.2s ease;
@@ -108,8 +127,9 @@ body {
   opacity: 0.7;
 }
 
-.nav-link.underlined {
-  text-decoration: underline;
+.nav-link.active {
+  font-weight: 700 !important;
+  font-family: 'Baskervville', serif;
 }
 
 .main-content {
@@ -118,19 +138,28 @@ body {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 100px);
-  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
 }
 
 .project-item {
-  font-size: 50px;
+  font-size: 52px;
   font-family: 'Baskervville', serif;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
   margin: 24px 0;
   color: #000;
   position: relative;
   z-index: 100;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 
@@ -142,28 +171,27 @@ body {
 }
 
 .highlight {
-  background-color: #1EFF00;
-  padding: 0 4px;
-  border-radius: 2px;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  line-height: 0.8;
-  transition: color 0.3s ease;
+  text-decoration: underline;
+  color: #000;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.1em;
+  text-decoration-thickness: 2px;
 }
 
 .highlight:hover {
-  color: transparent;
+  opacity: 0.7;
 }
 
 .author-description {
   font-family: 'Baskervville', serif;
-  font-size: 21px;
+  font-size: 16px;
   color: #000;
   font-weight: 400;
   margin-top: 40px;
-  text-align: center;
+  text-align: left;
+  align-self: flex-start;
 }
 
 
@@ -219,7 +247,7 @@ body {
   }
   
   .highlight:hover {
-    color: #000;
+    opacity: 0.7;
   }
 }
 

@@ -8,21 +8,24 @@ function App() {
     <div className="App">
       <div className="container">
         <nav className="navigation">
+          <div className="nav-left">
+            <div className="nav-name">Prakhar*</div>
+          </div>
           <div className="nav-right">
             {!isMenuOpen ? (
               <div className="nav-links">
-                <a href="#ux" className="nav-link underlined">UX</a>
-                <a href="#not-ux" className="nav-link">not UX</a>
+                <a href="#work" className="nav-link active">work</a>
                 <a href="#resume" className="nav-link">resume</a>
                 <a href="#contact" className="nav-link">contact</a>
+                <a href="#play" className="nav-link">play</a>
               </div>
             ) : (
               <div className="mobile-menu-inline">
                 <div className="mobile-menu-links">
-                  <a href="#ux" className="mobile-nav-link underlined">UX</a>
-                  <a href="#not-ux" className="mobile-nav-link">not UX</a>
+                  <a href="#work" className="mobile-nav-link active">work</a>
                   <a href="#resume" className="mobile-nav-link">resume</a>
                   <a href="#contact" className="mobile-nav-link">contact</a>
+                  <a href="#play" className="mobile-nav-link">play</a>
                 </div>
               </div>
             )}
@@ -33,20 +36,22 @@ function App() {
         </nav>
         
         <main className="main-content">
-          <div className="project-item">
-            <a href="#" className="project-link">Quickbooks <span className="highlight">Developer Portal</span></a>
-          </div>
-          <div className="project-item">
-            <a href="#" className="project-link">Generative furniture upcycling with <span className="highlight">Bland Canvas</span></a>
-          </div>
-          <div className="project-item">
-            <a href="#" className="project-link">Intuit <span className="highlight">App Recommendations</span></a>
-          </div>
-          <div className="project-item">
-            <a href="#" className="project-link">A social music listening app called <span className="highlight">Potluck</span> </a>
-          </div>
-          <div className="author-description">
-            I'm Prakhar, a product designer, and this is some of my work.
+          <div className="content-container">
+            <div className="project-item">
+              <a href="#" className="project-link">Intuit <span className="highlight">developer dashboard</span></a>
+            </div>
+            <div className="project-item">
+              <a href="#" className="project-link">Upcycling furniture with <span className="highlight">Bland Canvas</span></a>
+            </div>
+            <div className="project-item">
+              <a href="#" className="project-link">Quickbooks <span className="highlight">app recommendations</span></a>
+            </div>
+            <div className="project-item">
+              <a href="#" className="project-link">Social music listening with <span className="highlight">Potluck</span></a>
+            </div>
+            <div className="author-description">
+              *Prakhar is a product designer and a creative technologist
+            </div>
           </div>
         </main>
       </div>
