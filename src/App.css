@@ -49,7 +49,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  height: 10vh;
+  height: 40vh;
   background: #F6F5F1;
   z-index: 1;
   pointer-events: none;
@@ -454,7 +454,7 @@ body {
   .main-content {
     text-align: left;
     align-items: flex-start;
-    height: 90vh;
+    height: 80vh;
   }
   
   .project-item {
