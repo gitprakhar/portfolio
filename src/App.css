@@ -428,6 +428,7 @@ body {
   .main-content {
     text-align: left;
     align-items: flex-start;
+    height: 80vh;
   }
   
   .project-item {
