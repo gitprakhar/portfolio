@@ -20,8 +20,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Green only at the top, fade to white background */
-  background: linear-gradient(to bottom, #1EFF00 0%, #1EFF00 env(safe-area-inset-top, 48px), #F6F5F1 env(safe-area-inset-top, 48px));
+  /* Solid green background that extends into notch */
+  background: #1EFF00;
 }
 
 .App {
@@ -34,8 +34,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
-  /* Make background transparent to show body gradient */
-  background: transparent;
+  /* White background with gradient overlay */
+  background: #F6F5F1;
   /* Ensure this container takes up full space */
   display: flex;
   flex-direction: column;
@@ -55,7 +55,19 @@ body {
   pointer-events: none;
 }
 
-/* Gradient is now applied to html element */
+/* Bottom cream bar to cover the green background */
+.App::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20vh;
+  background: #F6F5F1;
+  z-index: 1;
+  pointer-events: none;
+}
 
 
 .container {
