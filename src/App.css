@@ -89,7 +89,7 @@ body::before {
   /* Set nav height to 10vh */
   height: 10vh;
   /* add top safe-area padding so the nav doesn't get overlapped by the notch/status bar */
-  padding: max(env(safe-area-inset-top), 2vh) 40px 0 40px;
+  padding: max(env(safe-area-inset-top), 5vh) 40px 0 40px;
   font-size: 16px;
   font-family: 'Newsreader', serif;
   position: relative;
