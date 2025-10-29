@@ -404,6 +404,16 @@ body::before {
   text-align: left;
 }
 
+.footer-cream {
+  height: 10vh;
+  width: 100%;
+  background: #F6F5F1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .project-item {
   font-size: 46px;
   font-family: 'Newsreader', serif;

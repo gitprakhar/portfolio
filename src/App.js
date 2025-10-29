@@ -150,6 +150,7 @@ function App() {
             </div>
           </div>
         </main>
+        <div className="footer-cream"></div>
       </div>
     </div>
   );
