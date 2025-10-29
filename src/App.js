@@ -11,6 +11,8 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuMounted, setMenuMounted] = useState(false);
   const mobileMenuRef = useRef(null);
+  const navRef = useRef(null);
+  const appRef = useRef(null);
   // time to keep the menu mounted while exit animations run (ms)
   // increased to match longer animation durations so the exit animation can finish
   // before the menu is unmounted.
@@ -25,6 +27,26 @@ function App() {
     }
   }, [menuMounted]);
 
+  // measure the nav height and expose it as a CSS variable on the root App element
+  useEffect(() => {
+    function setNavHeight() {
+      const navEl = navRef.current;
+      const appEl = appRef.current;
+      if (navEl && appEl) {
+        const h = Math.round(navEl.getBoundingClientRect().height);
+        appEl.style.setProperty('--nav-height', `${h}px`);
+      }
+    }
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+    // also update after safe-area insets might change (orientation change)
+    window.addEventListener('orientationchange', setNavHeight);
+    return () => {
+      window.removeEventListener('resize', setNavHeight);
+      window.removeEventListener('orientationchange', setNavHeight);
+    };
+  }, []);
+
   useEffect(() => {
     if (!isMenuOpen && menuMounted) {
       // wait for exit animation to complete before unmounting
@@ -35,9 +57,9 @@ function App() {
   }, [isMenuOpen, menuMounted]);
 
   return (
-    <div className="App">
+    <div className={`App ${menuMounted ? 'menu-mounted' : ''} ${isMenuOpen ? 'menu-open' : ''}`} ref={appRef}>
       <div className="container">
-        <nav className="navigation">
+        <nav className="navigation" ref={navRef}>
           <div className="nav-left">
             <div className="nav-name">Prakhar*</div>
           </div>

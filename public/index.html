@@ -6,9 +6,11 @@
   <!-- allow content to extend into the device notch/status bar area on iOS Safari -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- set theme color to match the page top so Chrome/Android use the same color in the status bar -->
-    <meta name="theme-color" content="#1e1346" />
-    <!-- enable standalone web-app display on iOS and use a translucent status bar so content can show behind it
-      (note: 'black-translucent' works when the site is added to home screen) -->
+  <meta name="theme-color" content="#F6F5F1" />
+    <!-- enable standalone web-app display when added to home screen; include the standardized tag
+      `mobile-web-app-capable` alongside the Apple-specific one. Some older Apple-only tags
+      remain for compatibility, but `mobile-web-app-capable` is the more cross-platform meta. -->
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta
