@@ -22,6 +22,20 @@ body {
   overflow-x: hidden;
   /* Solid green background that extends into notch */
   background: #1EFF00;
+  position: relative;
+}
+
+/* Cover the green background with cream where content should be */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #F6F5F1;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .App {
