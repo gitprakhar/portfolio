@@ -176,7 +176,14 @@ body {
   z-index: 0;
   opacity: 0;
   transform: translateY(-8px) scale(1.02);
-  animation: overlayEnter 420ms cubic-bezier(.2,.9,.2,1) 40ms both;
+  /* longer entrance for a slightly more luxurious feel */
+  animation: overlayEnter 600ms cubic-bezier(.2,.9,.2,1) 60ms both;
+}
+
+/* Exit animation: play the same keyframes in reverse when closing */
+.mobile-menu.closing::before {
+  animation-direction: reverse;
+  animation-delay: 0ms; /* start exit immediately */
 }
 
 /* Enter animation for the mobile menu content */
@@ -192,7 +199,14 @@ body {
 }
 
 .mobile-menu-content {
-  animation: mobileEnter 320ms cubic-bezier(.2,.9,.2,1) 80ms both;
+  /* a bit slower so the overlay and content feel cohesive */
+  animation: mobileEnter 480ms cubic-bezier(.2,.9,.2,1) 120ms both;
+}
+
+/* Reverse the content animation when closing */
+.mobile-menu.closing .mobile-menu-content {
+  animation-direction: reverse;
+  animation-delay: 0ms;
 }
 
 @keyframes linkEnter {
@@ -209,22 +223,57 @@ body {
 .mobile-nav-link {
   opacity: 0; /* start hidden, animation will bring to 1 */
   transform: translateY(6px);
-  animation: linkEnter 260ms ease both;
+  /* slower link reveal for a gentler rhythm */
+  animation: linkEnter 360ms ease both;
 }
 
-/* Stagger the link animations */
+/* Stagger the link animations (increased gaps) */
 .mobile-menu-links a:nth-child(1) {
-  animation-delay: 140ms;
-}
-.mobile-menu-links a:nth-child(2) {
   animation-delay: 200ms;
 }
+.mobile-menu-links a:nth-child(2) {
+  animation-delay: 280ms;
+}
 .mobile-menu-links a:nth-child(3) {
-  animation-delay: 260ms;
+  animation-delay: 360ms;
 }
 .mobile-menu-links a:nth-child(4) {
-  animation-delay: 320ms;
+  animation-delay: 440ms;
 }
+
+/* Closing: reverse the link animations and stagger in reverse order */
+.mobile-menu.closing .mobile-nav-link {
+  animation-direction: reverse;
+}
+/* reverse the stagger with larger gaps to match longer entrance */
+.mobile-menu.closing .mobile-menu-links a:nth-child(1) {
+  animation-delay: 440ms;
+}
+.mobile-menu.closing .mobile-menu-links a:nth-child(2) {
+  animation-delay: 360ms;
+}
+.mobile-menu.closing .mobile-menu-links a:nth-child(3) {
+  animation-delay: 280ms;
+}
+.mobile-menu.closing .mobile-menu-links a:nth-child(4) {
+  animation-delay: 200ms;
+}
+
+/* Page load animations for main content (same feel as the menu enter) */
+.main-content {
+  /* main content uses the same feel but slightly longer on load */
+  animation: mobileEnter 520ms cubic-bezier(.2,.9,.2,1) 120ms both;
+}
+
+.project-item {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: linkEnter 360ms ease both;
+}
+.projects-container .project-item:nth-child(1) { animation-delay: 180ms; }
+.projects-container .project-item:nth-child(2) { animation-delay: 240ms; }
+.projects-container .project-item:nth-child(3) { animation-delay: 300ms; }
+.projects-container .project-item:nth-child(4) { animation-delay: 360ms; }
 
 .mobile-menu-links {
   display: flex;
@@ -295,7 +344,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 90vh;
   position: relative;
   z-index: 2;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,30 @@ library.add(faBars, faTimes);
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuMounted, setMenuMounted] = useState(false);
+  const mobileMenuRef = useRef(null);
+  // time to keep the menu mounted while exit animations run (ms)
+  // increased to match longer animation durations so the exit animation can finish
+  // before the menu is unmounted.
+  const MENU_EXIT_MS = 860;
+
+  useEffect(() => {
+    if (menuMounted && mobileMenuRef.current) {
+      // initialize CSS vars if mounted
+      const el = mobileMenuRef.current;
+      el.style.setProperty('--mx', `50%`);
+      el.style.setProperty('--my', `12%`);
+    }
+  }, [menuMounted]);
+
+  useEffect(() => {
+    if (!isMenuOpen && menuMounted) {
+      // wait for exit animation to complete before unmounting
+      const t = setTimeout(() => setMenuMounted(false), MENU_EXIT_MS);
+      return () => clearTimeout(t);
+    }
+    return undefined;
+  }, [isMenuOpen, menuMounted]);
 
   return (
     <div className="App">
@@ -27,15 +51,46 @@ function App() {
             <button
               className="menu-toggle"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                if (!isMenuOpen) setMenuMounted(true);
+                setIsMenuOpen(prev => !prev);
+              }}
             >
-              <FontAwesomeIcon icon={isMenuOpen ? ['fass', 'times'] : ['fass', 'bars']} />
+              <FontAwesomeIcon icon={isMenuOpen ? ['fas', 'times'] : ['fas', 'bars']} />
             </button>
           </div>
         </nav>
         
-        {isMenuOpen && (
-          <div className="mobile-menu">
+        {menuMounted && (
+          <div
+            className={`mobile-menu ${isMenuOpen ? 'open' : 'closing'}`}
+            ref={mobileMenuRef}
+            onMouseMove={(e) => {
+              // update radial gradient center on pointer move
+              if (mobileMenuRef.current) {
+                const rect = mobileMenuRef.current.getBoundingClientRect();
+                const xPct = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+                const yPct = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+                mobileMenuRef.current.style.setProperty('--mx', `${xPct}%`);
+                mobileMenuRef.current.style.setProperty('--my', `${yPct}%`);
+              }
+            }}
+            onTouchMove={(e) => {
+              if (mobileMenuRef.current && e.touches && e.touches[0]) {
+                const rect = mobileMenuRef.current.getBoundingClientRect();
+                const xPct = Math.max(0, Math.min(100, ((e.touches[0].clientX - rect.left) / rect.width) * 100));
+                const yPct = Math.max(0, Math.min(100, ((e.touches[0].clientY - rect.top) / rect.height) * 100));
+                mobileMenuRef.current.style.setProperty('--mx', `${xPct}%`);
+                mobileMenuRef.current.style.setProperty('--my', `${yPct}%`);
+              }
+            }}
+            onMouseLeave={() => {
+              if (mobileMenuRef.current) {
+                mobileMenuRef.current.style.setProperty('--mx', `50%`);
+                mobileMenuRef.current.style.setProperty('--my', `12%`);
+              }
+            }}
+          >
             <div className="mobile-menu-content">
               <div className="mobile-menu-links">
                 <a href="#product-design" className="mobile-nav-link active" onClick={() => setIsMenuOpen(false)}>Product Design</a>
@@ -50,6 +105,8 @@ function App() {
           </div>
         )}
         
+  {/* show main content as soon as the menu is closed (isMenuOpen=false)
+      while `menuMounted` remains true to allow the overlay exit animation to finish */}
   <main className="main-content" style={{ display: isMenuOpen ? 'none' : undefined }}>
           <div className="content-container">
             <div className="projects-container">
