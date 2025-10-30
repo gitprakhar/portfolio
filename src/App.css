@@ -21,7 +21,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   /* Solid green background that extends into notch */
-  background: #1EFF00;
+  background: #F0EFEB;
   position: relative;
 }
 
@@ -33,7 +33,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #F6F5F1;
+  background: #F0EFEB;
   z-index: -1;
   pointer-events: none;
 }
@@ -48,26 +48,31 @@ body::before {
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
-  /* Gradient from green to cream */
-  background: linear-gradient(to bottom, #1EFF00, #F6F5F1 250px);
+  /* Radial gradient that follows mouse (desktop) */
+  /* Remove background gradient from main layer, move to ::before */
+  position: relative;
+  z-index: 0;
+  background: #F0EFEB;
+  transition: --mx 0.35s cubic-bezier(.2,.9,.2,1), --my 0.35s cubic-bezier(.2,.9,.2,1);
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 180vh at var(--mx, 50vw) var(--my, 20vh), #1EFF00 0%, rgba(30,255,0,0.18) 28%, rgba(30,255,0,0) 48%), #F0EFEB;
+  transition: background 0.35s cubic-bezier(.2,.9,.2,1);
   /* Ensure this container takes up full space */
   display: flex;
   flex-direction: column;
 }
 
-/* Bottom cream rectangle */
-.App::after {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 40vh;
-  background: #F6F5F1;
-  z-index: 1;
-  pointer-events: none;
-}
+/* Removed fixed cream overlay that caused a hard cutoff over the gradient */
 
 /* Gradient overlay on the white background */
 
@@ -404,16 +409,7 @@ body::before {
   text-align: left;
 }
 
-.footer-cream {
-  height: 15vh;
-  width: 100%;
-  background: #F6F5F1;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  pointer-events: none;
-}
+
 
 .project-item {
   font-size: 46px;
@@ -476,6 +472,33 @@ body::before {
 }
 
 @media (max-width: 480px) {
+  body {
+    background: #1EFF00;
+  }
+  .App::before {
+    background: linear-gradient(to bottom, #1EFF00 0px, #F0EFEB 250px);
+    height: 250px;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    position: fixed;
+    pointer-events: none;
+    content: '';
+    transition: background 0.35s cubic-bezier(.2,.9,.2,1);
+  }
+  .footer-cream {
+    display: block;
+    height: 10vh;
+    width: 100%;
+    background: #F0EFEB;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
   .main-content {
     text-align: left;
     align-items: flex-start;

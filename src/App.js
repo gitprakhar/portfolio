@@ -8,6 +8,38 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faBars, faTimes);
 
 function App() {
+  // Move the gradient with the cursor on desktop
+  // Soft delay for gradient following the cursor
+  useEffect(() => {
+    let targetX = 50, targetY = 20; // initial center
+    let currentX = 50, currentY = 20;
+    let animationFrame;
+
+    function handleMouseMove(e) {
+      if (window.innerWidth > 480) {
+        targetX = (e.clientX / window.innerWidth) * 100;
+        targetY = (e.clientY / window.innerHeight) * 100;
+      }
+    }
+
+    function animate() {
+      // interpolate current toward target
+  currentX += (targetX - currentX) * 0.007;
+  currentY += (targetY - currentY) * 0.007;
+      if (appRef.current) {
+        appRef.current.style.setProperty('--mx', `${currentX}vw`);
+        appRef.current.style.setProperty('--my', `${currentY}vh`);
+      }
+      animationFrame = requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('mousemove', handleMouseMove);
+    animationFrame = requestAnimationFrame(animate);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuMounted, setMenuMounted] = useState(false);
   const mobileMenuRef = useRef(null);
@@ -150,7 +182,7 @@ function App() {
             </div>
           </div>
         </main>
-        <div className="footer-cream"></div>
+  {/* Footer only for mobile, handled in CSS if needed */}
       </div>
     </div>
   );
