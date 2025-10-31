@@ -153,7 +153,7 @@ function App() {
                 <a href="#resume" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Resume</a>
               </div>
               <div className="mobile-author-description">
-                *Prakhar is a product designer & creative technologist
+                Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
               </div>
             </div>
           </div>
@@ -165,20 +165,11 @@ function App() {
           <div className="content-container">
             <div className="projects-container">
               <div className="project-item">
-                <a href="#" className="project-link">Intuit <span className="highlight">Developer Dashboard</span></a>
-              </div>
-              <div className="project-item">
-                <a href="#" className="project-link">Upcycling Furniture with <span className="highlight">Bland Canvas</span></a>
-              </div>
-              <div className="project-item">
-                <a href="#" className="project-link">Quickbooks <span className="highlight">App Recommendations</span></a>
-              </div>
-              <div className="project-item">
-                <a href="#" className="project-link">Social Music Listening with <span className="highlight">Potluck</span></a>
+                Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
               </div>
             </div>
             <div className="author-description">
-              *Prakhar is a product designer & creative technologist
+              *sometimes an animator and a video editor
             </div>
           </div>
         </main>

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   min-height: 100vh;
   min-height: -webkit-fill-available;
   color: #000;
@@ -65,7 +65,7 @@ body::before {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle 180vh at var(--mx, 50vw) var(--my, 20vh), #1EFF00 0%, rgba(30,255,0,0.18) 28%, rgba(30,255,0,0) 48%), #F0EFEB;
+  background: radial-gradient(circle 120vh at var(--mx, 50vw) var(--my, 20vh), #1EFF00 0%, rgba(30,255,0,0.18) 28%, rgba(30,255,0,0) 48%), #F0EFEB;
   transition: background 0.35s cubic-bezier(.2,.9,.2,1);
   /* Ensure this container takes up full space */
   display: flex;
@@ -99,6 +99,10 @@ body::before {
   font-family: 'Newsreader', serif;
   position: relative;
   z-index: 10001; /* keep nav above mobile overlay so nav-name stays visible */
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-left {
@@ -157,7 +161,7 @@ body::before {
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   font-weight: 400;
   transition: opacity 0.2s ease;
 }
@@ -172,7 +176,7 @@ body::before {
 
 .mobile-nav-link.active {
   font-weight: 700 !important;
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
 }
 
 .mobile-menu {
@@ -330,7 +334,7 @@ body::before {
   text-decoration: underline;
   color: #000;
   font-size: 28px;
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   font-weight: 400;
   transition: opacity 0.2s ease;
   text-decoration-skip-ink: none;
@@ -343,7 +347,7 @@ body::before {
 }
 
 .mobile-author-description {
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   font-size: 16px;
   color: #000;
   font-weight: 400;
@@ -358,7 +362,7 @@ body::before {
 }
 
 .mobile-menu-header .nav-name {
-  font-family: 'Newsreader', serif;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   font-size: 18px;
   color: #000;
   font-weight: 400;
@@ -403,7 +407,7 @@ body::before {
 }
 
 .content-container {
-  max-width: 1200px;
+  max-width: 1380px;
   margin: 0 auto;
   padding: 0 40px;
   text-align: left;
@@ -412,10 +416,10 @@ body::before {
 
 
 .project-item {
-  font-size: 46px;
-  font-family: 'Newsreader', serif;
+  font-size: 58px;
+  font-family: 'Apple Gothic', 'AppleGothic', sans-serif;
   font-weight: 400;
-  line-height: 0.8;
+  line-height: 1.1;
   margin: 20px 0;
   color: #000;
   position: relative;
@@ -439,6 +443,7 @@ body::before {
   text-decoration-skip-ink: none;
   text-underline-offset: 0.1em;
   text-decoration-thickness: 2px;
+  white-space: nowrap;
 }
 
 .highlight:hover {
@@ -450,7 +455,6 @@ body::before {
   font-size: 16px;
   color: #000;
   font-weight: 400;
-  margin-top: 30px;
   text-align: left;
   align-self: flex-start;
 }
