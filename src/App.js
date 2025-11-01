@@ -15,21 +15,21 @@ import fckplasticImg from './images/physical/f*ckplastic.jpg';
 library.add(faBars, faTimes);
 
 function App() {
-  // Check URL hash on initial load to determine which page to show
+  // Check URL path on initial load to determine which page to show
   const getInitialPage = () => {
-    const hash = window.location.hash;
-    if (hash === '#not-product-design') return 'not-product-design';
+    const path = window.location.pathname;
+    if (path === '/not-product-design') return 'not-product-design';
     return 'product-design';
   };
   
   const [currentPage, setCurrentPage] = useState(getInitialPage);
   
-  // Update URL hash when page changes
+  // Update URL path when page changes
   useEffect(() => {
     if (currentPage === 'not-product-design') {
-      window.history.pushState(null, '', '#not-product-design');
+      window.history.pushState(null, '', '/not-product-design');
     } else {
-      window.history.pushState(null, '', '#product-design');
+      window.history.pushState(null, '', '/product-design');
     }
   }, [currentPage]);
   
@@ -132,7 +132,7 @@ function App() {
         <nav className="navigation" ref={navRef}>
           <div className="nav-left">
             <a 
-              href="#product-design" 
+              href="/product-design" 
               className="nav-name"
               onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); }}
             >
@@ -142,14 +142,14 @@ function App() {
             <div className="nav-right">
             <div className="nav-links">
               <a 
-                href="#product-design" 
+                href="/product-design" 
                 className={`nav-link ${currentPage === 'product-design' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); }}
               >
                 Product Design
               </a>
               <a 
-                href="#not-product-design" 
+                href="/not-product-design" 
                 className={`nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); }}
               >
@@ -204,14 +204,14 @@ function App() {
             <div className="mobile-menu-content">
               <div className="mobile-menu-links">
                 <a 
-                  href="#product-design" 
+                  href="/product-design" 
                   className={`mobile-nav-link ${currentPage === 'product-design' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); setIsMenuOpen(false); }}
                 >
                   Product Design
                 </a>
                 <a 
-                  href="#not-product-design" 
+                  href="/not-product-design" 
                   className={`mobile-nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); setIsMenuOpen(false); }}
                 >
