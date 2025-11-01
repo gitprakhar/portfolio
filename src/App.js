@@ -229,7 +229,7 @@ function App() {
             <div className="content-container">
               <div className="projects-container">
                 <div className="project-item">
-                  Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
+                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
                 </div>
               </div>
               <div className="author-description">
@@ -247,11 +247,21 @@ function App() {
                     <p className="work-unit-description">Led art direction for 10+ editorial series at STIRworld.</p>
                   </div>
                   <div className="work-unit-images">
-                    <img src={avmImg} alt="Art Direction work 1" className="work-unit-image" />
-                    <img src={icImg} alt="Art Direction work 2" className="work-unit-image" />
-                    <img src={stirfriGif} alt="Art Direction work 3" className="work-unit-image" />
-                    <img src={fifaArenasImg} alt="Art Direction work 4" className="work-unit-image" />
-                    <img src={stirringDreamsGif} alt="Art Direction work 5" className="work-unit-image" />
+                    <a href="https://www.stirworld.com/think-opinions-art-voices-matter-stir-original-series-on-issues-of-communities-at-the-margins" target="_blank" rel="noopener noreferrer">
+                      <img src={avmImg} alt="Art Direction work 1" className="work-unit-image" />
+                    </a>
+                    <a href="https://www.stirworld.com/see-features-illustrative-chronicles-a-series-examining-works-from-the-world-of-illustration" target="_blank" rel="noopener noreferrer">
+                      <img src={icImg} alt="Art Direction work 2" className="work-unit-image" />
+                    </a>
+                    <a href="https://www.stirworld.com/stirfri" target="_blank" rel="noopener noreferrer">
+                      <img src={stirfriGif} alt="Art Direction work 3" className="work-unit-image" />
+                    </a>
+                    <a href="https://www.stirworld.com/see-features-fifa-arenas-better-together" target="_blank" rel="noopener noreferrer">
+                      <img src={fifaArenasImg} alt="Art Direction work 4" className="work-unit-image" />
+                    </a>
+                    <a href="https://www.stirworld.com/see-features-stirring-dreams-best-of-the-venice-art-biennale-2022" target="_blank" rel="noopener noreferrer">
+                      <img src={stirringDreamsGif} alt="Art Direction work 5" className="work-unit-image" />
+                    </a>
                   </div>
                 </div>
 
