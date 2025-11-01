@@ -131,7 +131,13 @@ function App() {
       <div className="container">
         <nav className="navigation" ref={navRef}>
           <div className="nav-left">
-            <div className="nav-name">Prakhar Mittal</div>
+            <a 
+              href="#product-design" 
+              className="nav-name"
+              onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); }}
+            >
+              Prakhar Mittal
+            </a>
           </div>
             <div className="nav-right">
             <div className="nav-links">

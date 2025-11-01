@@ -121,6 +121,8 @@ body::before {
   color: #000;
   font-weight: 400;
   mix-blend-mode: difference;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-right {
