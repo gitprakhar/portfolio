@@ -8,9 +8,8 @@ import icImg from './images/art_direction/ic.jpg';
 import stirfriGif from './images/art_direction/stirfri.gif';
 import fifaArenasImg from './images/art_direction/fifa-arenas.jpg';
 import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
-import deathOfDetailImg from './images/immersive-installations/death-of-detail.jpg';
-import noWrongAnswersImg from './images/immersive-installations/no-wrong-answers.jpg';
-import oblivionImg from './images/immersive-installations/oblivion.jpg';
+import panelsImg from './images/physical/panels.jpg';
+import fckplasticImg from './images/physical/f*ckplastic.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
@@ -233,7 +232,7 @@ function App() {
                 </div>
               </div>
               <div className="author-description">
-                *sometimes an animator and a video editor
+                *also a visual and motion designer
               </div>
             </div>
           )}
@@ -308,13 +307,12 @@ function App() {
 
                 <div className="work-unit">
                   <div className="work-unit-text">
-                    <h2 className="work-unit-title">Immersive Installations</h2>
-                    <p className="work-unit-description">I led Art Direction at STIR for 3 years</p>
+                    <h2 className="work-unit-title">Print/Physical</h2>
+                    <p className="work-unit-description">Physical design work and print materials</p>
                   </div>
                   <div className="work-unit-images">
-                    <img src={deathOfDetailImg} alt="Immersive Installation 1" className="work-unit-image" />
-                    <img src={noWrongAnswersImg} alt="Immersive Installation 2" className="work-unit-image" />
-                    <img src={oblivionImg} alt="Immersive Installation 3" className="work-unit-image" />
+                    <img src={panelsImg} alt="Print/Physical work 1" className="work-unit-image" />
+                    <img src={fckplasticImg} alt="Print/Physical work 2" className="work-unit-image" />
                   </div>
                 </div>
               </div>
