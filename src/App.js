@@ -3,22 +3,55 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import avmImg from './images/art_direction/avm.jpg';
+import icImg from './images/art_direction/ic.jpg';
+import stirfriGif from './images/art_direction/stirfri.gif';
+import fifaArenasImg from './images/art_direction/fifa-arenas.jpg';
+import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
+import deathOfDetailImg from './images/immersive-installations/death-of-detail.jpg';
+import noWrongAnswersImg from './images/immersive-installations/no-wrong-answers.jpg';
+import oblivionImg from './images/immersive-installations/oblivion.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
 
 function App() {
+  // Check URL hash on initial load to determine which page to show
+  const getInitialPage = () => {
+    const hash = window.location.hash;
+    if (hash === '#not-product-design') return 'not-product-design';
+    return 'product-design';
+  };
+  
+  const [currentPage, setCurrentPage] = useState(getInitialPage);
+  
+  // Update URL hash when page changes
+  useEffect(() => {
+    if (currentPage === 'not-product-design') {
+      window.history.pushState(null, '', '#not-product-design');
+    } else {
+      window.history.pushState(null, '', '#product-design');
+    }
+  }, [currentPage]);
+  
   // Move the gradient with the cursor on desktop
   // Soft delay for gradient following the cursor
   useEffect(() => {
-    let targetX = 50, targetY = 20; // initial center
-    let currentX = 50, currentY = 20;
+    let targetX = 50, targetY = 50; // default center
+    let currentX = 50, currentY = 50;
     let animationFrame;
+    let initialized = false;
 
-    function handleMouseMove(e) {
+    function handleAnyMouseEvent(e) {
       if (window.innerWidth > 480) {
         targetX = (e.clientX / window.innerWidth) * 100;
         targetY = (e.clientY / window.innerHeight) * 100;
+        // Snap to cursor position on first detection
+        if (!initialized) {
+          currentX = targetX;
+          currentY = targetY;
+          initialized = true;
+        }
       }
     }
 
@@ -33,10 +66,16 @@ function App() {
       animationFrame = requestAnimationFrame(animate);
     }
 
-    window.addEventListener('mousemove', handleMouseMove);
+    // Listen to multiple events to catch cursor position as early as possible
+    document.body.addEventListener('mouseover', handleAnyMouseEvent, { once: true, capture: true });
+    document.body.addEventListener('mouseenter', handleAnyMouseEvent, { once: true, capture: true });
+    window.addEventListener('mousemove', handleAnyMouseEvent);
+    
     animationFrame = requestAnimationFrame(animate);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      document.body.removeEventListener('mouseover', handleAnyMouseEvent, { capture: true });
+      document.body.removeEventListener('mouseenter', handleAnyMouseEvent, { capture: true });
+      window.removeEventListener('mousemove', handleAnyMouseEvent);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
@@ -93,14 +132,26 @@ function App() {
       <div className="container">
         <nav className="navigation" ref={navRef}>
           <div className="nav-left">
-            <div className="nav-name">Prakhar*</div>
+            <div className="nav-name">Prakhar Mittal</div>
           </div>
             <div className="nav-right">
             <div className="nav-links">
-              <a href="#product-design" className="nav-link active">Product Design</a>
-              <a href="#not-product-design" className="nav-link">Not Product Design</a>
-              <a href="#contact" className="nav-link">Contact</a>
-              <a href="#resume" className="nav-link">Resume</a>
+              <a 
+                href="#product-design" 
+                className={`nav-link ${currentPage === 'product-design' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); }}
+              >
+                Product Design
+              </a>
+              <a 
+                href="#not-product-design" 
+                className={`nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); }}
+              >
+                Not Product Design
+              </a>
+              <a href="mailto:prakhar@newschool.edu" className="nav-link">Contact</a>
+              <a href="https://drive.google.com/file/d/1C2fQ-lbqyClcVI79zR1kmDnMl6nh9JN2/view?usp=share_link" className="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
             <button
               className="menu-toggle"
@@ -147,10 +198,22 @@ function App() {
           >
             <div className="mobile-menu-content">
               <div className="mobile-menu-links">
-                <a href="#product-design" className="mobile-nav-link active" onClick={() => setIsMenuOpen(false)}>Product Design</a>
-                <a href="#not-product-design" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Not Product Design</a>
-                <a href="#contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
-                <a href="#resume" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Resume</a>
+                <a 
+                  href="#product-design" 
+                  className={`mobile-nav-link ${currentPage === 'product-design' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage('product-design'); setIsMenuOpen(false); }}
+                >
+                  Product Design
+                </a>
+                <a 
+                  href="#not-product-design" 
+                  className={`mobile-nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); setIsMenuOpen(false); }}
+                >
+                  Not Product Design
+                </a>
+                <a href="mailto:prakhar@newschool.edu" className="mobile-nav-link">Contact</a>
+                <a href="https://drive.google.com/file/d/1C2fQ-lbqyClcVI79zR1kmDnMl6nh9JN2/view?usp=share_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
               </div>
               <div className="mobile-author-description">
                 Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
@@ -162,16 +225,91 @@ function App() {
   {/* show main content as soon as the menu is closed (isMenuOpen=false)
       while `menuMounted` remains true to allow the overlay exit animation to finish */}
   <main className="main-content" style={{ display: isMenuOpen ? 'none' : undefined }}>
-          <div className="content-container">
-            <div className="projects-container">
-              <div className="project-item">
-                Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
+          {currentPage === 'product-design' && (
+            <div className="content-container">
+              <div className="projects-container">
+                <div className="project-item">
+                  Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
+                </div>
+              </div>
+              <div className="author-description">
+                *sometimes an animator and a video editor
               </div>
             </div>
-            <div className="author-description">
-              *sometimes an animator and a video editor
+          )}
+
+          {currentPage === 'not-product-design' && (
+            <div className="content-container">
+              <div className="work-units-container">
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Art Direction</h2>
+                    <p className="work-unit-description">Led art direction for 10+ editorial series at STIRworld.</p>
+                  </div>
+                  <div className="work-unit-images">
+                    <img src={avmImg} alt="Art Direction work 1" className="work-unit-image" />
+                    <img src={icImg} alt="Art Direction work 2" className="work-unit-image" />
+                    <img src={stirfriGif} alt="Art Direction work 3" className="work-unit-image" />
+                    <img src={fifaArenasImg} alt="Art Direction work 4" className="work-unit-image" />
+                    <img src={stirringDreamsGif} alt="Art Direction work 5" className="work-unit-image" />
+                  </div>
+                </div>
+
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Film & Motion</h2>
+                    <p className="work-unit-description">Led motion, graphics, editing, and sound for 100+ videos.</p>
+                  </div>
+                  <div className="work-unit-videos">
+                    <iframe 
+                      className="work-unit-video"
+                      src="https://www.youtube.com/embed/AkFt5hvt-uQ" 
+                      title="Video 1"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                    <iframe 
+                      className="work-unit-video"
+                      src="https://www.youtube.com/embed/myOx96Eo-2E" 
+                      title="Video 2"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                    <iframe 
+                      className="work-unit-video"
+                      src="https://www.youtube.com/embed/nWG7ThzuoXM" 
+                      title="Video 3"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                    <iframe 
+                      className="work-unit-video"
+                      src="https://www.youtube.com/embed/Z-NUv6z49MU?start=132" 
+                      title="Video 4"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Immersive Installations</h2>
+                    <p className="work-unit-description">I led Art Direction at STIR for 3 years</p>
+                  </div>
+                  <div className="work-unit-images">
+                    <img src={deathOfDetailImg} alt="Immersive Installation 1" className="work-unit-image" />
+                    <img src={noWrongAnswersImg} alt="Immersive Installation 2" className="work-unit-image" />
+                    <img src={oblivionImg} alt="Immersive Installation 3" className="work-unit-image" />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}
       </div>
