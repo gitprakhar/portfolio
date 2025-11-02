@@ -57,7 +57,6 @@ body::before {
   /* Radial gradient that follows mouse (desktop) */
   /* Remove background gradient from main layer, move to ::before */
   position: relative;
-  z-index: 0;
   background: #F0EFEB;
   transition: --mx 0.35s cubic-bezier(.2,.9,.2,1), --my 0.35s cubic-bezier(.2,.9,.2,1);
 }
@@ -79,6 +78,15 @@ body::before {
   mix-blend-mode: normal;
 }
 
+.App:has(.project-page)::before {
+  position: fixed;
+  top: 0;
+}
+
+.App:has(.project-page.no-gradient)::before {
+  display: none;
+}
+
 /* Removed fixed cream overlay that caused a hard cutoff over the gradient */
 
 /* Gradient overlay on the white background */
@@ -88,6 +96,7 @@ body::before {
   padding: 0;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .navigation {
@@ -430,6 +439,12 @@ body::before {
 }
 
 .main-content:has(.work-units-container) {
+  height: auto;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+.main-content:has(.project-page) {
   height: auto;
   min-height: 100vh;
   justify-content: flex-start;

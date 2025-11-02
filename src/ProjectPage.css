@@ -1,0 +1,329 @@
+.project-page {
+  width: 100%;
+  max-width: 135vh;
+  margin: 0 auto;
+  padding: 20vh 4vh 8vh 4vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8vh;
+  margin-bottom: 6vh;
+  position: relative;
+  z-index: 2;
+}
+
+.project-header {
+  flex: 1;
+  max-width: 70%;
+  position: relative;
+}
+
+.project-title {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 6vh;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 3vh 0;
+  color: #000;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.project-description {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.2vh;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: #000;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  min-width: 25%;
+  position: relative;
+}
+
+.project-meta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.meta-label {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 1.6vh;
+  font-weight: 400;
+  margin: 0;
+  color: #000;
+  mix-blend-mode: difference;
+  opacity: 0.6;
+  position: relative;
+}
+
+.meta-value {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 1.8vh;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  color: #000;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.project-hero-image {
+  width: 100%;
+  margin-bottom: 8vh;
+  position: relative;
+  background: #F0EFEB;
+  border-radius: 1vh;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  z-index: 1;
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vh;
+  display: block;
+  object-fit: cover;
+  background: #F0EFEB;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 60vh;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.5vh;
+  color: #000;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.project-section {
+  width: 85%;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.project-section-highlight {
+  width: 85%;
+  padding: 12vh 0;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.section-label {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 1.4vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 4.5vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.section-body {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.2vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+  mix-blend-mode: difference;
+  position: relative;
+  max-width: 85%;
+}
+
+.section-body strong {
+  font-weight: 700;
+}
+
+.subsection {
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.subsection-title {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 3.5vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0 0 1vh 0;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.subsection-heading {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.8vh;
+  font-weight: 400;
+  color: #000;
+  margin: 2vh 0 0.5vh 0;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.subsection-text {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.2vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+  mix-blend-mode: difference;
+  position: relative;
+  max-width: 85%;
+}
+
+.subsection ul {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.2vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0.5vh 0 0 2vh;
+  padding: 0;
+  line-height: 1.5;
+  mix-blend-mode: difference;
+  position: relative;
+  list-style-type: disc;
+}
+
+.subsection ul li {
+  margin-bottom: 0.5vh;
+}
+
+.section-image {
+  width: 100%;
+  margin-top: 2vh;
+  border-radius: 1vh;
+  overflow: hidden;
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subsection-image {
+  width: 100%;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.subsection-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1vh;
+}
+
+.subsection-image-caption {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2vh;
+  font-weight: 400;
+  font-style: italic;
+  color: #000;
+  margin: 0;
+  text-align: left;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.subsection-images-row {
+  width: 120%;
+  margin-top: 2vh;
+  margin-left: -10%;
+  display: flex;
+  gap: 2vh;
+}
+
+.subsection-images-row .subsection-image {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .project-page {
+    padding: 12vh 3vh 6vh 3vh;
+  }
+
+  .project-hero {
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .project-header {
+    max-width: 100%;
+  }
+
+  .project-title {
+    font-size: 4.5vh;
+    margin-bottom: 2vh;
+  }
+
+  .project-description {
+    font-size: 2vh;
+  }
+
+  .project-meta {
+    flex-direction: row;
+    gap: 4vh;
+    min-width: 100%;
+  }
+
+  .meta-label {
+    font-size: 1.5vh;
+  }
+
+  .meta-value {
+    font-size: 1.7vh;
+  }
+
+  .image-placeholder {
+    height: 40vh;
+    font-size: 2vh;
+  }
+}
