@@ -14,6 +14,7 @@ import fifaArenasImg from './images/art_direction/fifa-arenas.jpg';
 import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
 import panelsImg from './images/physical/panels.jpg';
 import fckplasticImg from './images/physical/f*ckplastic.jpg';
+import toteImg from './images/physical/tote.jpg';
 import noWrongAnswersImg from './images/installations/no-wrong-answers.jpg';
 import oblivionImg from './images/installations/oblivion.jpg';
 import quantumImg from './images/installations/quantum.jpg';
@@ -348,6 +349,7 @@ function App() {
                   </div>
                   <div className="work-unit-images">
                     <img src={panelsImg} alt="Print/Physical work 1" className="work-unit-image" />
+                    <img src={toteImg} alt="Tote bag design" className="work-unit-image" />
                     <img src={fckplasticImg} alt="Print/Physical work 2" className="work-unit-image" />
                   </div>
                 </div>
