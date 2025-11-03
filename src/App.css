@@ -70,7 +70,7 @@ body::before {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #F0EFEB 0%, rgba(240,239,235,0.8) 20%, rgba(240,239,235,0.3) 50%, rgba(240,239,235,0.05) 80%, #F0EFEB00 100%), #F0EFEB;
+  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #13D031 0%, rgba(19,208,49,0.8) 20%, rgba(19,208,49,0.3) 50%, rgba(19,208,49,0.05) 80%, #13D03100 100%), #F0EFEB;
   transition: background 0.35s cubic-bezier(.2,.9,.2,1);
   /* Ensure this container takes up full space */
   display: flex;
