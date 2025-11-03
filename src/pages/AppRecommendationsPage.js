@@ -20,7 +20,7 @@ import actionbasedpopupPng from '../images/app-recommendations/actionbasedpopup.
 function AppRecommendationsPage() {
   return (
     <ProjectPage
-      title="Contextual app recommendations"
+      title="Quickbooks App Recommendations"
       description="I designed and tested an AI-powered app recommendation system for QuickBooks, improving user adoption by delivering contextual, task-based suggestions after user actions. My work included user interviews, iterative prototyping, and optimizing app discovery for small business owners."
       focus={`UX Research
 UI Design`}
@@ -117,7 +117,7 @@ Product Manager: Anna Kippley`}
         </div>
       </div>
 
-      <div className="project-section-highlight">
+      <div className="project-section">
         <h3 className="section-label">KEY OPPORTUNITY</h3>
         <h2 className="section-title">How can we create app discovery patterns centered around context?</h2>
       </div>

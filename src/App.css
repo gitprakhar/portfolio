@@ -70,7 +70,7 @@ body::before {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #04D125 0%, rgba(4,209,37,0.8) 20%, rgba(4,209,37,0.3) 50%, rgba(4,209,37,0.05) 80%, #04D12500 100%), #F0EFEB;
+  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #13D031 0%, rgba(19,208,49,0.8) 20%, rgba(19,208,49,0.3) 50%, rgba(19,208,49,0.05) 80%, #13D03100 100%), #F0EFEB;
   transition: background 0.35s cubic-bezier(.2,.9,.2,1);
   /* Ensure this container takes up full space */
   display: flex;
@@ -244,7 +244,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #04D125, rgba(4, 209, 37, 0));
+  background: linear-gradient(to bottom, #13D031, rgba(19, 208, 49, 0));
   z-index: 0;
   opacity: 0;
   transform: translateY(-8px) scale(1.02);
@@ -645,7 +645,7 @@ body::before {
     background: #04D125;
   }
   .App::before {
-    background: linear-gradient(to bottom, #04D125 0px, #F0EFEB 250px);
+    background: linear-gradient(to bottom, #13D031 0px, #F0EFEB 250px);
     height: 250px;
     width: 100vw;
     left: 0;

@@ -14,6 +14,9 @@ import fifaArenasImg from './images/art_direction/fifa-arenas.jpg';
 import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
 import panelsImg from './images/physical/panels.jpg';
 import fckplasticImg from './images/physical/f*ckplastic.jpg';
+import noWrongAnswersImg from './images/installations/no-wrong-answers.jpg';
+import oblivionImg from './images/installations/oblivion.jpg';
+import quantumImg from './images/installations/quantum.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
@@ -341,11 +344,23 @@ function App() {
                 <div className="work-unit">
                   <div className="work-unit-text">
                     <h2 className="work-unit-title">Print/Physical</h2>
-                    <p className="work-unit-description">Physical design work and print materials</p>
+                    <p className="work-unit-description">I've design posters, objects, and booth materials</p>
                   </div>
                   <div className="work-unit-images">
                     <img src={panelsImg} alt="Print/Physical work 1" className="work-unit-image" />
                     <img src={fckplasticImg} alt="Print/Physical work 2" className="work-unit-image" />
+                  </div>
+                </div>
+
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Installations</h2>
+                    <p className="work-unit-description">I've built interactive installations using physical computing and projection mapping.</p>
+                  </div>
+                  <div className="work-unit-images">
+                    <img src={noWrongAnswersImg} alt="No Wrong Answers installation" className="work-unit-image" />
+                    <img src={oblivionImg} alt="Oblivion installation" className="work-unit-image" />
+                    <img src={quantumImg} alt="Quantum installation" className="work-unit-image" />
                   </div>
                 </div>
               </div>
