@@ -3,6 +3,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { Analytics } from "@vercel/analytics/react";
 import AppRecommendationsPage from './pages/AppRecommendationsPage';
 import BlandCanvasPage from './pages/BlandCanvasPage';
 import DeveloperPortalPage from './pages/DeveloperPortalPage';
@@ -387,6 +388,7 @@ function App() {
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}
       </div>
+      <Analytics />
     </div>
   );
 }
