@@ -15,8 +15,7 @@ function PotluckPage() {
     <ProjectPage
       title="Potluck"
       description="Potluck is a social music app that connects people in shared spaces through collaborative playlists. Users join public channels to listen, suggest, and vote on songs together, turning music into a fun, community-driven experience that goes beyond just playing tunes in the background."
-      focus={`UX research
-UI design`}
+      focus={`UI design`}
       timeline="4 weeks"
       heroImage={potluckHeroImg}
     >

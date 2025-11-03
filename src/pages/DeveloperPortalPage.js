@@ -24,7 +24,8 @@ function DeveloperPortalPage() {
             focus={`UX Research
 UI Design`}
       team={`Senior Product Designer: Adam Beasley
-Product Manager: Riya Gayasen`}
+Product Manager: Riya Gayasen
+UX Researcher: Renee Gonzalez`}
       timeline="6 weeks"
       heroImage={devPortalImg}
     >
