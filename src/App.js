@@ -5,6 +5,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import AppRecommendationsPage from './pages/AppRecommendationsPage';
 import BlandCanvasPage from './pages/BlandCanvasPage';
+import DeveloperPortalPage from './pages/DeveloperPortalPage';
+import PotluckPage from './pages/PotluckPage';
 import avmImg from './images/art_direction/avm.jpg';
 import icImg from './images/art_direction/ic.jpg';
 import stirfriGif from './images/art_direction/stirfri.gif';
@@ -37,6 +39,26 @@ function App() {
       window.history.pushState(null, '', currentPage);
     }
   }, [currentPage]);
+  
+  // Listen for browser back/forward button clicks
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      if (path === '/not-product-design') {
+        setCurrentPage('not-product-design');
+      } else if (path.startsWith('/project/')) {
+        setCurrentPage(path);
+      } else {
+        setCurrentPage('product-design');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
   
   // Move the gradient with the cursor on desktop
   // Soft delay for gradient following the cursor
@@ -239,7 +261,7 @@ function App() {
             <div className="content-container">
               <div className="projects-container">
                 <div className="project-item">
-                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
+                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit Developer Portal</a>, and a social music listening app called <a href="/project/potluck" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/potluck'); }} className="highlight">Potluck</a>.
                 </div>
               </div>
               <div className="author-description">
@@ -336,6 +358,14 @@ function App() {
 
           {currentPage === '/project/bland-canvas' && (
             <BlandCanvasPage />
+          )}
+
+          {currentPage === '/project/developer-portal' && (
+            <DeveloperPortalPage />
+          )}
+
+          {currentPage === '/project/potluck' && (
+            <PotluckPage />
           )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}

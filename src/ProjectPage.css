@@ -227,7 +227,24 @@
   list-style-type: disc;
 }
 
+.project-section ul {
+  font-family: 'AppleGothic', sans-serif;
+  font-size: 2.2vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0.5vh 0 0 2vh;
+  padding: 0;
+  line-height: 1.5;
+  mix-blend-mode: difference;
+  position: relative;
+  list-style-type: disc;
+}
+
 .subsection ul li {
+  margin-bottom: 0.5vh;
+}
+
+.project-section ul li {
   margin-bottom: 0.5vh;
 }
 
