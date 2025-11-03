@@ -22,8 +22,11 @@ function AppRecommendationsPage() {
     <ProjectPage
       title="Contextual app recommendations"
       description="I designed and tested an AI-powered app recommendation system for QuickBooks, improving user adoption by delivering contextual, task-based suggestions after user actions. My work included user interviews, iterative prototyping, and optimizing app discovery for small business owners."
-      role="UX Designer"
-      team="Senior Product Designer: Daniel Klein"
+      focus={`UX Research
+UI Design`}
+      team={`Senior Product Designer: Daniel Klein
+Product Manager: Anna Kippley`}
+      timeline="6 weeks"
       heroImage={appRecommendationsGif}
     >
       <div className="project-section">

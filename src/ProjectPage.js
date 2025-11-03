@@ -19,8 +19,9 @@ import actionbasedpopupPng from './images/app-recommendations/actionbasedpopup.p
 function ProjectPage({ 
   title, 
   description, 
-  role, 
+  focus, 
   team, 
+  timeline,
   heroImage,
   noGradient,
   children 
@@ -35,13 +36,28 @@ function ProjectPage({
         
         <div className="project-meta">
           <div className="project-meta-section">
-            <h3 className="meta-label">Role</h3>
-            <p className="meta-value">{role}</p>
+            <h3 className="meta-label">Focus</h3>
+            <div className="meta-value">
+              {focus.split('\n').map((line, index) => (
+                <div key={index}>{line}</div>
+              ))}
+            </div>
           </div>
           
+          {team && (
+            <div className="project-meta-section">
+              <h3 className="meta-label">Team</h3>
+              <div className="meta-value">
+                {team.split('\n').map((line, index) => (
+                  <div key={index}>{line}</div>
+                ))}
+              </div>
+            </div>
+          )}
+          
           <div className="project-meta-section">
-            <h3 className="meta-label">Team</h3>
-            <p className="meta-value">{team}</p>
+            <h3 className="meta-label">Timeline</h3>
+            <p className="meta-value">{timeline}</p>
           </div>
         </div>
       </div>

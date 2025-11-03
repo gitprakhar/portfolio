@@ -22,8 +22,11 @@ function BlandCanvasPage() {
     <ProjectPage
       title="Bland Canvas AI"
       description="Bland Canvas is an AI-powered platform that transforms the basic IKEA MARIUS stool into personalized designs. By blending creative AI with DIY hacks, it reimagines disposable furniture as a canvas for self-expression and meaningful reuse."
-      role="Product Designer & Developer"
-      team="Solo Project"
+      focus={`Human–AI Collaboration
+Generative AI
+DIY Furniture
+Creative Tools`}
+      timeline="6 months"
       heroImage={blandcanvasImg}
     >
       {/* Content for Bland Canvas will be added here */}

@@ -20,9 +20,12 @@ function DeveloperPortalPage() {
   return (
     <ProjectPage
       title="Intuit Developer Portal"
-      description="The QuickBooks Developer Portal powers business-critical integrations and apps. But the existing portal didn’t reflect who was actually using it."
-      role="Senior UX Designer & Frontend Developer"
-      team="Product Manager: Sarah Chen, Engineering Lead: Mike Rodriguez"
+      description="I redesigned the QuickBooks Developer Portal to empower small and indie developers with built-in analytics, error monitoring, and connection search tools. The redesign improves visibility and troubleshooting for smaller teams, making app health tracking more accessible while preserving enterprise-grade functionality."
+            focus={`UX Research
+UI Design`}
+      team={`Senior Product Designer: Adam Beasley
+Product Manager: Riya Gayasen`}
+      timeline="6 weeks"
       heroImage={devPortalImg}
     >
       {/* Content for Developer Portal will be added here */}
