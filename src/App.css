@@ -70,7 +70,7 @@ body::before {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #13D031 0%, rgba(19,208,49,0.8) 20%, rgba(19,208,49,0.3) 50%, rgba(19,208,49,0.05) 80%, #13D03100 100%), #F0EFEB;
+  background: radial-gradient(circle var(--gradient-size) at var(--mx, 50%) var(--my, 50%), #F0EFEB 0%, rgba(240,239,235,0.8) 20%, rgba(240,239,235,0.3) 50%, rgba(240,239,235,0.05) 80%, #F0EFEB00 100%), #F0EFEB;
   transition: background 0.35s cubic-bezier(.2,.9,.2,1);
   /* Ensure this container takes up full space */
   display: flex;
@@ -244,7 +244,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #13D031, rgba(19, 208, 49, 0));
+  background: linear-gradient(to bottom, #F0EFEB, rgba(240, 239, 235, 0));
   z-index: 0;
   opacity: 0;
   transform: translateY(-8px) scale(1.02);
@@ -642,7 +642,7 @@ body::before {
 
 @media (max-width: 480px) {
   body {
-    background: #04D125;
+    background: #F0EFEB;
   }
   .App::before {
     background: linear-gradient(to bottom, #13D031 0px, #F0EFEB 250px);
@@ -677,13 +677,13 @@ body::before {
   }
   
   .project-item {
-    font-size: 28px;
+    font-size: 27px;
     margin: 0;
     line-height: 1.2;
   }
   
   .content-container {
-    padding: 0 20px;
+    padding: 0 40px;
   }
   
   .highlight {
@@ -692,6 +692,7 @@ body::before {
   
   .navigation {
     font-size: 14px;
+    padding: max(env(safe-area-inset-top), 5vh) 40px 0 40px;
   }
   
   .nav-right {
