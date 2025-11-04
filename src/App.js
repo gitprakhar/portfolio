@@ -4,6 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Analytics } from "@vercel/analytics/react";
+import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 import AppRecommendationsPage from './pages/AppRecommendationsPage';
 import BlandCanvasPage from './pages/BlandCanvasPage';
 import DeveloperPortalPage from './pages/DeveloperPortalPage';
@@ -13,14 +17,51 @@ import icImg from './images/art_direction/ic.jpg';
 import stirfriGif from './images/art_direction/stirfri.gif';
 import fifaArenasImg from './images/art_direction/fifa-arenas.jpg';
 import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
-import panelsImg from './images/physical/panels.jpg';
+import panelsImg from './images/physical/panels2.jpeg';
 import toteImg from './images/physical/tote.jpg';
-import noWrongAnswersImg from './images/installations/no-wrong-answers.jpg';
+import noWrongAnswersImg from './images/installations/nowronganswers.jpeg';
 import oblivionImg from './images/installations/oblivion.jpg';
 import quantumImg from './images/installations/quantum.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
+
+// Define image arrays for lightbox
+const physicalImages = [
+  { 
+    src: panelsImg, 
+    alt: "Design panels",
+    title: "Exhibition Panels",
+    description: "Custom designed information panels for art exhibition display"
+  },
+  { 
+    src: toteImg, 
+    alt: "Tote bag design",
+    title: "Branded Tote Bag",
+    description: "Limited edition tote bag design featuring custom typography and branding"
+  }
+];
+
+const installationImages = [
+  { 
+    src: noWrongAnswersImg, 
+    alt: "No Wrong Answers installation",
+    title: "No Wrong Answers",
+    description: "An immersive installation that invites visitors to reflect on the core of human identity in the age of AI."
+  },
+  { 
+    src: oblivionImg, 
+    alt: "Oblivion installation",
+    title: "Projection Mapping Oblivion",
+    description: "This setup hides collapse behind perfect projections, pulling viewers into a tech-induced oblivion."
+  },
+  { 
+    src: quantumImg, 
+    alt: "Quantum installation",
+    title: "Fleeting States + Measured Values",
+    description: "Fleeting States & Measured Values – the two worlds of quantum computing is a project that aims to explain concepts of quantum computing through a physical interactive installation."
+  }
+];
 
 function App() {
   // Check URL path on initial load to determine which page to show
@@ -32,6 +73,16 @@ function App() {
   };
   
   const [currentPage, setCurrentPage] = useState(getInitialPage);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  
+  // Function to open lightbox with specific image set
+  const openLightbox = (images, index) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
   
   // Update URL path when page changes
   useEffect(() => {
@@ -348,8 +399,20 @@ function App() {
                     <p className="work-unit-description">I've design posters, objects, and booth materials</p>
                   </div>
                   <div className="work-unit-images">
-                    <img src={panelsImg} alt="Print/Physical work 1" className="work-unit-image" />
-                    <img src={toteImg} alt="Tote bag design" className="work-unit-image" />
+                    <img 
+                      src={panelsImg} 
+                      alt="Print/Physical work 1" 
+                      className="work-unit-image" 
+                      onClick={() => openLightbox(physicalImages, 0)}
+                      style={{ cursor: 'pointer' }}
+                    />
+                    <img 
+                      src={toteImg} 
+                      alt="Tote bag design" 
+                      className="work-unit-image" 
+                      onClick={() => openLightbox(physicalImages, 1)}
+                      style={{ cursor: 'pointer' }}
+                    />
                   </div>
                 </div>
 
@@ -359,9 +422,27 @@ function App() {
                     <p className="work-unit-description">I've built interactive installations using physical computing and projection mapping.</p>
                   </div>
                   <div className="work-unit-images">
-                    <img src={noWrongAnswersImg} alt="No Wrong Answers installation" className="work-unit-image" />
-                    <img src={oblivionImg} alt="Oblivion installation" className="work-unit-image" />
-                    <img src={quantumImg} alt="Quantum installation" className="work-unit-image" />
+                    <img 
+                      src={noWrongAnswersImg} 
+                      alt="No Wrong Answers installation" 
+                      className="work-unit-image" 
+                      onClick={() => openLightbox(installationImages, 0)}
+                      style={{ cursor: 'pointer' }}
+                    />
+                    <img 
+                      src={oblivionImg} 
+                      alt="Oblivion installation" 
+                      className="work-unit-image" 
+                      onClick={() => openLightbox(installationImages, 1)}
+                      style={{ cursor: 'pointer' }}
+                    />
+                    <img 
+                      src={quantumImg} 
+                      alt="Quantum installation" 
+                      className="work-unit-image" 
+                      onClick={() => openLightbox(installationImages, 2)}
+                      style={{ cursor: 'pointer' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -386,6 +467,16 @@ function App() {
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}
       </div>
+      
+      {/* Lightbox component */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        slides={lightboxImages}
+        index={lightboxIndex}
+        plugins={[Captions]}
+      />
+      
       <Analytics />
     </div>
   );
