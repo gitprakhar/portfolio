@@ -22,6 +22,8 @@ import toteImg from './images/physical/tote.jpg';
 import noWrongAnswersImg from './images/installations/nowronganswers.jpeg';
 import oblivionImg from './images/installations/oblivion.jpg';
 import quantumImg from './images/installations/quantum.jpg';
+import quantumImg2 from './images/installations/quantum2.jpg';
+import quantumImg3 from './images/installations/quantum3.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
@@ -40,6 +42,13 @@ const physicalImages = [
     title: "Branded Tote Bag",
     description: "Limited edition tote bag design featuring custom typography and branding"
   }
+  // You can add more images here that won't show on the main page:
+  // { 
+  //   src: additionalImage1, 
+  //   alt: "Additional work",
+  //   title: "Additional Project",
+  //   description: "More details about this piece"
+  // }
 ];
 
 const installationImages = [
@@ -60,6 +69,18 @@ const installationImages = [
     alt: "Quantum installation",
     title: "Fleeting States + Measured Values",
     description: "Fleeting States & Measured Values – the two worlds of quantum computing is a project that aims to explain concepts of quantum computing through a physical interactive installation."
+  },
+  { 
+    src: quantumImg2, 
+    alt: "Quantum installation detail",
+    title: "Fleeting States + Measured Values",
+    description: "Additional view showcasing the interactive elements and quantum state visualization."
+  },
+  { 
+    src: quantumImg3, 
+    alt: "Quantum installation process",
+    title: "Fleeting States + Measured Values",
+    description: "Behind-the-scenes view of the installation setup and technical implementation."
   }
 ];
 
