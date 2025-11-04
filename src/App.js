@@ -331,7 +331,7 @@ function App() {
                 <div className="work-unit">
                   <div className="work-unit-text">
                     <h2 className="work-unit-title">Art Direction</h2>
-                    <p className="work-unit-description">Led art direction for 10+ editorial series at STIRworld.</p>
+                    <p className="work-unit-description">Directed art for 10+ editorial series at STIRworld.</p>
                   </div>
                   <div className="work-unit-images">
                     <a href="https://www.stirworld.com/think-opinions-art-voices-matter-stir-original-series-on-issues-of-communities-at-the-margins" target="_blank" rel="noopener noreferrer">
@@ -355,7 +355,7 @@ function App() {
                 <div className="work-unit">
                   <div className="work-unit-text">
                     <h2 className="work-unit-title">Film & Motion</h2>
-                    <p className="work-unit-description">Led motion, graphics, editing, and sound for 100+ videos.</p>
+                    <p className="work-unit-description">Designed and produced motion graphics, editing, and sound for 100+ videos.</p>
                   </div>
                   <div className="work-unit-videos">
                     <iframe 
@@ -395,8 +395,8 @@ function App() {
 
                 <div className="work-unit">
                   <div className="work-unit-text">
-                    <h2 className="work-unit-title">Print/Physical</h2>
-                    <p className="work-unit-description">I've design posters, objects, and booth materials</p>
+                    <h2 className="work-unit-title">Print & Physical</h2>
+                    <p className="work-unit-description">Designed posters, objects, and booth materials.</p>
                   </div>
                   <div className="work-unit-images">
                     <img 
@@ -419,7 +419,7 @@ function App() {
                 <div className="work-unit">
                   <div className="work-unit-text">
                     <h2 className="work-unit-title">Installations</h2>
-                    <p className="work-unit-description">I've built interactive installations using physical computing and projection mapping.</p>
+                    <p className="work-unit-description">Built interactive installations using physical computing and projection mapping.</p>
                   </div>
                   <div className="work-unit-images">
                     <img 
