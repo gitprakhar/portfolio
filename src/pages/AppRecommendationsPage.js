@@ -112,7 +112,7 @@ Product Manager: Anna Kippley`}
           
           <div className="subsection-image">
             <img src={appmarketplacePng} alt="App marketplace" />
-            <p className="subsection-image-caption">The small app icon on the dashboard is often overlooked</p>
+            <p className="subsection-image-caption">Low dashboard placement leads to limited App Store visibility.</p>
           </div>
         </div>
       </div>
