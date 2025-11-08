@@ -480,6 +480,29 @@ body::before {
   mix-blend-mode: difference;
 }
 
+/* Show/hide desktop vs mobile text */
+.desktop-text {
+  display: block;
+}
+
+.mobile-text {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .desktop-text {
+    display: none;
+  }
+  
+  .mobile-text {
+    display: block;
+  }
+  
+  .mobile-text .highlight {
+    white-space: nowrap;
+  }
+}
+
 
 /* Project links */
 .project-link {

@@ -336,8 +336,11 @@ function App() {
           {currentPage === 'product-design' && (
             <div className="content-container">
               <div className="projects-container">
-                <div className="project-item">
+                <div className="project-item desktop-text">
                   Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit Developer Portal</a>, and a social music listening app called <a href="/project/potluck" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/potluck'); }} className="highlight">Potluck</a>.
+                </div>
+                <div className="project-item mobile-text">
+                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks</a> App Recommendations, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit</a> Developer Portal, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, and a social music listening app called <a href="/project/potluck" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/potluck'); }} className="highlight">Potluck</a>.
                 </div>
               </div>
               <div className="author-description">
