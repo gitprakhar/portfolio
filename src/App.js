@@ -321,7 +321,7 @@ function App() {
                   Not Product Design
                 </a>
                 <a href="mailto:prakhar@newschool.edu" className="mobile-nav-link">Contact</a>
-                <a href="https://drive.google.com/file/d/1C2fQ-lbqyClcVI79zR1kmDnMl6nh9JN2/view?usp=share_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://drive.google.com/file/d/1tSF8Mf8vfXoduoP60PFWFKl2Cr87qwRg/view?usp=share_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
               </div>
               <div className="mobile-author-description">
                 Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
