@@ -85,11 +85,12 @@ Product Manager: Anna Kippley`}
         <div className="subsection">
           <h3 className="subsection-title">Interviewee criteria</h3>
           
+          <h4 className="subsection-heading">Mid market customers (10-100 employees)</h4>
+          <p className="subsection-text">Mid-market customers were a key strategic focus for the company, presenting a significant opportunity. Despite this, only 43% of mid-market customers were utilizing apps. Since app connections were shown to directly impact retention rates, half of our interviewees were selected from this segment.</p>
+                    
           <h4 className="subsection-heading">Solopreneurs and small businesses (1-10 employees)</h4>
           <p className="subsection-text">The other half of our interviewees were solopreneurs and small businesses. Small businesses make up 55% of the total QuickBooks user base, but their retention rates are lower due to the ease of switching to competitors. This presented a significant opportunity to explore strategies for improving their retention.</p>
           
-          <h4 className="subsection-heading">Mid market customers (10-100 employees)</h4>
-          <p className="subsection-text">Mid-market customers were a key strategic focus for the company, presenting a significant opportunity. Despite this, only 43% of mid-market customers were utilizing apps. Since app connections were shown to directly impact retention rates, half of our interviewees were selected from this segment.</p>
         </div>
 
         <div className="subsection">
