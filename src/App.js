@@ -97,12 +97,18 @@ function App() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({});
   
   // Function to open lightbox with specific image set
   const openLightbox = (images, index) => {
     setLightboxImages(images);
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  // Handle image load state
+  const handleImageLoad = (imageName) => {
+    setLoadedImages(prev => ({ ...prev, [imageName]: true }));
   };
   
   // Update URL path when page changes
@@ -359,19 +365,54 @@ function App() {
                   </div>
                   <div className="work-unit-images">
                     <a href="https://www.stirworld.com/think-opinions-art-voices-matter-stir-original-series-on-issues-of-communities-at-the-margins" target="_blank" rel="noopener noreferrer">
-                      <img src={avmImg} alt="Art Direction work 1" className="work-unit-image" />
+                      <img
+                        src={avmImg}
+                        alt="Art Direction work 1"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('avm')}
+                        style={{ opacity: loadedImages['avm'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
                     </a>
                     <a href="https://www.stirworld.com/see-features-illustrative-chronicles-a-series-examining-works-from-the-world-of-illustration" target="_blank" rel="noopener noreferrer">
-                      <img src={icImg} alt="Art Direction work 2" className="work-unit-image" />
+                      <img
+                        src={icImg}
+                        alt="Art Direction work 2"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('ic')}
+                        style={{ opacity: loadedImages['ic'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
                     </a>
                     <a href="https://www.stirworld.com/stirfri" target="_blank" rel="noopener noreferrer">
-                      <img src={stirfriGif} alt="Art Direction work 3" className="work-unit-image" />
+                      <img
+                        src={stirfriGif}
+                        alt="Art Direction work 3"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('stirfri')}
+                        style={{ opacity: loadedImages['stirfri'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
                     </a>
                     <a href="https://www.stirworld.com/see-features-fifa-arenas-better-together" target="_blank" rel="noopener noreferrer">
-                      <img src={fifaArenasImg} alt="Art Direction work 4" className="work-unit-image" />
+                      <img
+                        src={fifaArenasImg}
+                        alt="Art Direction work 4"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('fifaArenas')}
+                        style={{ opacity: loadedImages['fifaArenas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
                     </a>
                     <a href="https://www.stirworld.com/see-features-stirring-dreams-best-of-the-venice-art-biennale-2022" target="_blank" rel="noopener noreferrer">
-                      <img src={stirringDreamsGif} alt="Art Direction work 5" className="work-unit-image" />
+                      <img
+                        src={stirringDreamsGif}
+                        alt="Art Direction work 5"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('stirringDreams')}
+                        style={{ opacity: loadedImages['stirringDreams'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
                     </a>
                   </div>
                 </div>
@@ -423,19 +464,23 @@ function App() {
                     <p className="work-unit-description">Designed posters, objects, and booth materials.</p>
                   </div>
                   <div className="work-unit-images">
-                    <img 
-                      src={panelsImg} 
-                      alt="Print/Physical work 1" 
-                      className="work-unit-image" 
+                    <img
+                      src={panelsImg}
+                      alt="Print/Physical work 1"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('panels')}
                       onClick={() => openLightbox(physicalImages, 0)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', opacity: loadedImages['panels'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
-                    <img 
-                      src={toteImg} 
-                      alt="Tote bag design" 
-                      className="work-unit-image" 
+                    <img
+                      src={toteImg}
+                      alt="Tote bag design"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('tote')}
                       onClick={() => openLightbox(physicalImages, 1)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', opacity: loadedImages['tote'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
                   </div>
                 </div>
@@ -446,26 +491,32 @@ function App() {
                     <p className="work-unit-description">Built interactive installations using physical computing and projection mapping.</p>
                   </div>
                   <div className="work-unit-images">
-                    <img 
-                      src={noWrongAnswersImg} 
-                      alt="No Wrong Answers installation" 
-                      className="work-unit-image" 
+                    <img
+                      src={noWrongAnswersImg}
+                      alt="No Wrong Answers installation"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('noWrongAnswers')}
                       onClick={() => openLightbox(installationImages, 0)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', opacity: loadedImages['noWrongAnswers'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
-                    <img 
-                      src={oblivionImg} 
-                      alt="Oblivion installation" 
-                      className="work-unit-image" 
+                    <img
+                      src={oblivionImg}
+                      alt="Oblivion installation"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('oblivion')}
                       onClick={() => openLightbox(installationImages, 1)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', opacity: loadedImages['oblivion'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
-                    <img 
-                      src={quantumImg} 
-                      alt="Quantum installation" 
-                      className="work-unit-image" 
+                    <img
+                      src={quantumImg}
+                      alt="Quantum installation"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('quantum')}
                       onClick={() => openLightbox(installationImages, 2)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', opacity: loadedImages['quantum'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
                   </div>
                 </div>
