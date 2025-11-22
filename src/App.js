@@ -449,10 +449,18 @@ function App() {
                     ></iframe>
                     <iframe 
                       className="work-unit-video"
-                      src="https://www.youtube.com/embed/Z-NUv6z49MU?start=132" 
+                      src="https://www.youtube.com/embed/Z-NUv6z49MU" 
                       title="Video 4"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                    <iframe
+                      className="work-unit-video"
+                      src="https://www.youtube.com/embed/6o74wbYpIZ8?start=26"
+                      title="Video 5"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   </div>
