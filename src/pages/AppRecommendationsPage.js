@@ -17,7 +17,7 @@ import differenttimesaverpatternsPng from '../images/app-recommendations/differe
 import actionbasedembeddedPng from '../images/app-recommendations/actionbasedembedded.png';
 import actionbasedpopupPng from '../images/app-recommendations/actionbasedpopup.png';
 
-function AppRecommendationsPage() {
+function AppRecommendationsPage({ onNavigate }) {
   return (
     <ProjectPage
       title="Quickbooks App Recommendations"
@@ -28,6 +28,16 @@ UI Design`}
 Product Manager: Anna Kippley`}
       timeline="6 weeks"
       heroImage={appRecommendationsGif}
+      prevProject={{
+        title: "Potluck",
+        url: "/project/potluck",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/potluck'); }
+      }}
+      nextProject={{
+        title: "Intuit Developer Portal",
+        url: "/project/developer-portal",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/developer-portal'); }
+      }}
     >
       <div className="project-section">
         <h3 className="section-label">PROBLEM</h3>

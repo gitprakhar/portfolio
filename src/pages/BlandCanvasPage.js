@@ -17,7 +17,7 @@ import fromothersImg from '../images/bland-canvas/from-others.jpg';
 
 
 
-function BlandCanvasPage() {
+function BlandCanvasPage({ onNavigate }) {
   return (
     <ProjectPage
       title="Bland Canvas AI"
@@ -28,6 +28,16 @@ DIY Furniture
 Creative Tools`}
       timeline="6 months"
       heroImage={blandcanvasImg}
+      prevProject={{
+        title: "Intuit Developer Portal",
+        url: "/project/developer-portal",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/developer-portal'); }
+      }}
+      nextProject={{
+        title: "Potluck",
+        url: "/project/potluck",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/potluck'); }
+      }}
     >
       {/* Content for Bland Canvas will be added here */}
     <div className="project-section">

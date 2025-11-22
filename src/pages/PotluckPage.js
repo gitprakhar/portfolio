@@ -10,7 +10,7 @@ import channelsImg from '../images/potluck/channels.gif';
 import channelPageImg from '../images/potluck/channel-page.jpeg';
 import suggestionsImg from '../images/potluck/suggestions.jpeg';
 
-function PotluckPage() {
+function PotluckPage({ onNavigate }) {
   return (
     <ProjectPage
       title="Potluck"
@@ -18,6 +18,16 @@ function PotluckPage() {
       focus={`UI design`}
       timeline="4 weeks"
       heroImage={potluckHeroImg}
+      prevProject={{
+        title: "Bland Canvas",
+        url: "/project/bland-canvas",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/bland-canvas'); }
+      }}
+      nextProject={{
+        title: "QuickBooks App Recommendations",
+        url: "/project/app-recommendations",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/app-recommendations'); }
+      }}
     >
 
       <div className="project-section">

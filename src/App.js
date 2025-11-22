@@ -120,6 +120,8 @@ function App() {
     } else if (currentPage.startsWith('/project/')) {
       window.history.pushState(null, '', currentPage);
     }
+    // Scroll to top when page changes
+    window.scrollTo(0, 0);
   }, [currentPage]);
   
   // Listen for browser back/forward button clicks
@@ -533,19 +535,19 @@ function App() {
           )}
 
           {currentPage === '/project/app-recommendations' && (
-            <AppRecommendationsPage />
+            <AppRecommendationsPage onNavigate={setCurrentPage} />
           )}
 
           {currentPage === '/project/bland-canvas' && (
-            <BlandCanvasPage />
+            <BlandCanvasPage onNavigate={setCurrentPage} />
           )}
 
           {currentPage === '/project/developer-portal' && (
-            <DeveloperPortalPage />
+            <DeveloperPortalPage onNavigate={setCurrentPage} />
           )}
 
           {currentPage === '/project/potluck' && (
-            <PotluckPage />
+            <PotluckPage onNavigate={setCurrentPage} />
           )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}

@@ -16,7 +16,7 @@ import errorsImg from '../images/dev-portal/errors.png';
 import latencyImg from '../images/dev-portal/latency.png';
 import apiEndpointsImg from '../images/dev-portal/api_endpoints.png';
 
-function DeveloperPortalPage() {
+function DeveloperPortalPage({ onNavigate }) {
   return (
     <ProjectPage
       title="Intuit Developer Portal"
@@ -28,6 +28,16 @@ Product Manager: Riya Gayasen
 UX Researcher: Renee Gonzalez`}
       timeline="6 weeks"
       heroImage={devPortalImg}
+      prevProject={{
+        title: "QuickBooks App Recommendations",
+        url: "/project/app-recommendations",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/app-recommendations'); }
+      }}
+      nextProject={{
+        title: "Bland Canvas",
+        url: "/project/bland-canvas",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/bland-canvas'); }
+      }}
     >
       {/* Content for Developer Portal will be added here */}
           <div className="project-section">

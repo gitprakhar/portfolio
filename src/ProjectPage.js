@@ -16,15 +16,17 @@ import differenttimesaverpatternsPng from './images/app-recommendations/differen
 import actionbasedembeddedPng from './images/app-recommendations/actionbasedembedded.png';
 import actionbasedpopupPng from './images/app-recommendations/actionbasedpopup.png';
 
-function ProjectPage({ 
-  title, 
-  description, 
-  focus, 
-  team, 
+function ProjectPage({
+  title,
+  description,
+  focus,
+  team,
   timeline,
   heroImage,
   noGradient,
-  children 
+  prevProject,
+  nextProject,
+  children
 }) {
   return (
     <div className={`project-page ${noGradient ? 'no-gradient' : ''}`}>
@@ -33,7 +35,7 @@ function ProjectPage({
           <h1 className="project-title">{title}</h1>
           <p className="project-description">{description}</p>
         </div>
-        
+
         <div className="project-meta">
           <div className="project-meta-section">
             <h3 className="meta-label">Focus</h3>
@@ -43,7 +45,7 @@ function ProjectPage({
               ))}
             </div>
           </div>
-          
+
           {team && (
             <div className="project-meta-section">
               <h3 className="meta-label">Team</h3>
@@ -54,14 +56,14 @@ function ProjectPage({
               </div>
             </div>
           )}
-          
+
           <div className="project-meta-section">
             <h3 className="meta-label">Timeline</h3>
             <p className="meta-value">{timeline}</p>
           </div>
         </div>
       </div>
-      
+
       <div className="project-hero-image">
         {heroImage ? (
           <img src={heroImage} alt={title} />
@@ -71,6 +73,31 @@ function ProjectPage({
       </div>
 
       {children}
+
+      {(prevProject || nextProject) && (
+        <div className="project-navigation">
+          {prevProject && (
+            <a
+              href={prevProject.url}
+              className="project-nav-link prev"
+              onClick={prevProject.onClick}
+            >
+              <span className="nav-label">Previous</span>
+              <span className="nav-title">{prevProject.title}</span>
+            </a>
+          )}
+          {nextProject && (
+            <a
+              href={nextProject.url}
+              className="project-nav-link next"
+              onClick={nextProject.onClick}
+            >
+              <span className="nav-label">Next</span>
+              <span className="nav-title">{nextProject.title}</span>
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
