@@ -28,11 +28,6 @@ UI Design`}
 Product Manager: Anna Kippley`}
       timeline="6 weeks"
       heroImage={appRecommendationsGif}
-      prevProject={{
-        title: "Potluck",
-        url: "/project/potluck",
-        onClick: (e) => { e.preventDefault(); onNavigate('/project/potluck'); }
-      }}
       nextProject={{
         title: "Intuit Developer Portal",
         url: "/project/developer-portal",

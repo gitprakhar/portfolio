@@ -12,6 +12,7 @@ import AppRecommendationsPage from './pages/AppRecommendationsPage';
 import BlandCanvasPage from './pages/BlandCanvasPage';
 import DeveloperPortalPage from './pages/DeveloperPortalPage';
 import PotluckPage from './pages/PotluckPage';
+import StirworldMobileRedesignPage from './pages/StirworldMobileRedesignPage';
 import avmImg from './images/art_direction/avm.jpg';
 import icImg from './images/art_direction/ic.jpg';
 import stirfriGif from './images/art_direction/stirfri.gif';
@@ -332,7 +333,7 @@ function App() {
                 <a href="https://drive.google.com/file/d/1tSF8Mf8vfXoduoP60PFWFKl2Cr87qwRg/view?usp=share_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
               </div>
               <div className="mobile-author-description">
-                Prakhar is a product designer and creative technologist*, bridging design, code, and strategy. Some of his recent work includes <span className="highlight">QuickBooks App Recommendations</span>, an AI tool for furniture upcycling called <span className="highlight">Bland Canvas</span>, the new <span className="highlight">Intuit Developer Portal</span>, and a social music listening app called <span className="highlight">Potluck</span>.
+                Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <span className="highlight">QuickBooks App Recommendations</span>, the new <span className="highlight">Intuit Developer Portal</span>, a redesign of <span className="highlight">STIRworld's mobile website</span>, and <span className="highlight">Bland Canvas</span>, an AI tool for furniture upcycling.
               </div>
             </div>
           </div>
@@ -345,10 +346,10 @@ function App() {
             <div className="content-container">
               <div className="projects-container">
                 <div className="project-item desktop-text">
-                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit Developer Portal</a>, and a social music listening app called <a href="/project/potluck" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/potluck'); }} className="highlight">Potluck</a>.
+                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit Developer Portal</a>, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's mobile website</a>, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
                 </div>
                 <div className="project-item mobile-text">
-                  Prakhar is a product designer and creative technologist*, bridging design, code, and storytelling. Some of his recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks</a> App Recommendations, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit</a> Developer Portal, an AI tool for furniture upcycling called <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, and a social music listening app called <a href="/project/potluck" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/potluck'); }} className="highlight">Potluck</a>.
+                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks</a> App Recommendations, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit</a> Developer Portal, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's</a> mobile website, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
                 </div>
               </div>
               <div className="author-description">
@@ -548,6 +549,10 @@ function App() {
 
           {currentPage === '/project/potluck' && (
             <PotluckPage onNavigate={setCurrentPage} />
+          )}
+
+          {currentPage === '/project/stirworld-mobile-redesign' && (
+            <StirworldMobileRedesignPage onNavigate={setCurrentPage} />
           )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}

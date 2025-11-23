@@ -24,9 +24,9 @@ function PotluckPage({ onNavigate }) {
         onClick: (e) => { e.preventDefault(); onNavigate('/project/bland-canvas'); }
       }}
       nextProject={{
-        title: "QuickBooks App Recommendations",
-        url: "/project/app-recommendations",
-        onClick: (e) => { e.preventDefault(); onNavigate('/project/app-recommendations'); }
+        title: "Stir Mobile Redesign",
+        url: "/project/stirworld-mobile-redesign",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/stirworld-mobile-redesign'); }
       }}
     >
 

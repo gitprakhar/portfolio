@@ -34,9 +34,9 @@ UX Researcher: Renee Gonzalez`}
         onClick: (e) => { e.preventDefault(); onNavigate('/project/app-recommendations'); }
       }}
       nextProject={{
-        title: "Bland Canvas",
-        url: "/project/bland-canvas",
-        onClick: (e) => { e.preventDefault(); onNavigate('/project/bland-canvas'); }
+        title: "STIRworld Mobile Redesign",
+        url: "/project/stirworld-mobile-redesign",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/stirworld-mobile-redesign'); }
       }}
     >
       {/* Content for Developer Portal will be added here */}

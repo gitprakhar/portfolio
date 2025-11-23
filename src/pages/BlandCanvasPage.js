@@ -29,14 +29,9 @@ Creative Tools`}
       timeline="6 months"
       heroImage={blandcanvasImg}
       prevProject={{
-        title: "Intuit Developer Portal",
-        url: "/project/developer-portal",
-        onClick: (e) => { e.preventDefault(); onNavigate('/project/developer-portal'); }
-      }}
-      nextProject={{
-        title: "Potluck",
-        url: "/project/potluck",
-        onClick: (e) => { e.preventDefault(); onNavigate('/project/potluck'); }
+        title: "STIRworld Mobile Redesign",
+        url: "/project/stirworld-mobile-redesign",
+        onClick: (e) => { e.preventDefault(); onNavigate('/project/stirworld-mobile-redesign'); }
       }}
     >
       {/* Content for Bland Canvas will be added here */}

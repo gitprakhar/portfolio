@@ -188,7 +188,7 @@
   font-size: 2.2vh;
   font-weight: 400;
   color: #000;
-  margin: 0;
+  margin: 0 0 2vh 0;
   line-height: 1.5;
   mix-blend-mode: difference;
   position: relative;
@@ -288,6 +288,7 @@
 .subsection-image {
   width: 100%;
   margin-top: 2vh;
+  margin-bottom: 2vh;
   display: flex;
   flex-direction: column;
   gap: 1.5vh;
@@ -323,6 +324,22 @@
 .subsection-images-row .subsection-image {
   flex: 1;
   margin-top: 0;
+}
+
+/* Side by side layout */
+.side-by-side-layout {
+  display: flex;
+  gap: 4vh;
+  align-items: flex-start;
+  margin-top: 2vh;
+}
+
+.side-by-side-text {
+  flex: 1.2;
+}
+
+.side-by-side-image {
+  flex: 1;
 }
 
 /* Mobile responsive */
@@ -367,6 +384,19 @@
     height: 40vh;
     font-size: 2vh;
   }
+
+  .side-by-side-layout {
+    flex-direction: column-reverse;
+    gap: 3vh;
+  }
+
+  .side-by-side-text {
+    flex: none;
+  }
+
+  .side-by-side-image {
+    flex: none;
+  }
 }
 
 /* Mobile phones */
@@ -401,6 +431,19 @@
   }
   
   .subsection-images-row .subsection-image {
+    flex: none;
+  }
+
+  .side-by-side-layout {
+    flex-direction: column-reverse;
+    gap: 3vh;
+  }
+
+  .side-by-side-text {
+    flex: none;
+  }
+
+  .side-by-side-image {
     flex: none;
   }
 }
