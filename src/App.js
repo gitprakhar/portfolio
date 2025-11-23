@@ -29,6 +29,11 @@ import quantumImg3 from './images/installations/quantum3.jpg';
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
 
+// PASSWORD LOCK CONFIGURATION
+// Set to false to disable password protection for QuickBooks and Developer Portal
+const ENABLE_PASSWORD_LOCK = true;
+const LOCKED_PASSWORD = "password";
+
 // Define image arrays for lightbox
 const physicalImages = [
   { 
@@ -99,6 +104,7 @@ function App() {
   const [lightboxImages, setLightboxImages] = useState([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   
   // Function to open lightbox with specific image set
   const openLightbox = (images, index) => {
@@ -110,6 +116,34 @@ function App() {
   // Handle image load state
   const handleImageLoad = (imageName) => {
     setLoadedImages(prev => ({ ...prev, [imageName]: true }));
+  };
+
+  // Handle password-protected navigation
+  const handleProtectedNavigation = (e, projectPath) => {
+    e.preventDefault();
+
+    if (!ENABLE_PASSWORD_LOCK) {
+      // If password lock is disabled, navigate directly
+      setCurrentPage(projectPath);
+      return;
+    }
+
+    if (isAuthenticated) {
+      // If already authenticated, navigate directly
+      setCurrentPage(projectPath);
+      return;
+    }
+
+    // Prompt for password
+    const enteredPassword = prompt("Enter password to view this project:");
+
+    if (enteredPassword === LOCKED_PASSWORD) {
+      setIsAuthenticated(true);
+      setCurrentPage(projectPath);
+    } else if (enteredPassword !== null) {
+      // User entered a password but it was wrong (null means they cancelled)
+      alert("Incorrect password");
+    }
   };
   
   // Update URL path when page changes
@@ -346,10 +380,10 @@ function App() {
             <div className="content-container">
               <div className="projects-container">
                 <div className="project-item desktop-text">
-                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks App Recommendations</a>, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit Developer Portal</a>, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's mobile website</a>, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
+                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => handleProtectedNavigation(e, '/project/app-recommendations')} className="highlight">QuickBooks App Recommendations</a>, the new <a href="/project/developer-portal" onClick={(e) => handleProtectedNavigation(e, '/project/developer-portal')} className="highlight">Intuit Developer Portal</a>, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's mobile website</a>, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
                 </div>
                 <div className="project-item mobile-text">
-                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/app-recommendations'); }} className="highlight">QuickBooks</a> App Recommendations, the new <a href="/project/developer-portal" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/developer-portal'); }} className="highlight">Intuit</a> Developer Portal, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's</a> mobile website, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
+                  Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <a href="/project/app-recommendations" onClick={(e) => handleProtectedNavigation(e, '/project/app-recommendations')} className="highlight">QuickBooks</a> App Recommendations, the new <a href="/project/developer-portal" onClick={(e) => handleProtectedNavigation(e, '/project/developer-portal')} className="highlight">Intuit</a> Developer Portal, a redesign of <a href="/project/stirworld-mobile-redesign" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/stirworld-mobile-redesign'); }} className="highlight">STIRworld's</a> mobile website, and <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} className="highlight">Bland Canvas</a>, an AI tool for furniture upcycling.
                 </div>
               </div>
               <div className="author-description">
