@@ -135,7 +135,7 @@ function App() {
     }
 
     // Prompt for password
-    const enteredPassword = prompt("Enter password to view this project:");
+    const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
 
     if (enteredPassword === LOCKED_PASSWORD) {
       setIsAuthenticated(true);
