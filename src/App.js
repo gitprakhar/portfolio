@@ -99,13 +99,30 @@ function App() {
     return 'product-design';
   };
   
-  const [currentPage, setCurrentPage] = useState(getInitialPage);
+  const [currentPage, setCurrentPage] = useState(() => {
+    // Check if we need to redirect protected pages before initial render
+    const initialPath = getInitialPage();
+    const protectedPaths = ['/project/app-recommendations', '/project/developer-portal'];
+    const isProtected = ENABLE_PASSWORD_LOCK && protectedPaths.includes(initialPath);
+
+    // If it's a protected page, start at homepage and let useEffect handle auth
+    return isProtected ? 'product-design' : initialPath;
+  });
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
+  const [hasCheckedInitialAuth, setHasCheckedInitialAuth] = useState(false);
+
+  // List of protected project paths
+  const protectedPaths = ['/project/app-recommendations', '/project/developer-portal'];
+
+  // Check if a path is protected
+  const isProtectedPath = (path) => {
+    return ENABLE_PASSWORD_LOCK && protectedPaths.includes(path);
+  };
+
   // Function to open lightbox with specific image set
   const openLightbox = (images, index) => {
     setLightboxImages(images);
@@ -146,6 +163,30 @@ function App() {
     }
   };
   
+  // Check for password protection on initial load
+  useEffect(() => {
+    const initialPath = window.location.pathname;
+    if (isProtectedPath(initialPath)) {
+      const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
+
+      if (enteredPassword === LOCKED_PASSWORD) {
+        setIsAuthenticated(true);
+        setCurrentPage(initialPath); // Navigate to the protected page
+        setHasCheckedInitialAuth(true);
+      } else {
+        // Stay on homepage if password is incorrect or cancelled
+        window.history.pushState(null, '', '/product-design');
+        setHasCheckedInitialAuth(true);
+        if (enteredPassword !== null) {
+          alert("Incorrect password");
+        }
+      }
+    } else {
+      // Not a protected path, mark as checked
+      setHasCheckedInitialAuth(true);
+    }
+  }, []); // Only run on initial mount
+
   // Update URL path when page changes
   useEffect(() => {
     if (currentPage === 'not-product-design') {
@@ -163,6 +204,25 @@ function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
+
+      // Check if navigating to a protected page
+      if (isProtectedPath(path) && !isAuthenticated) {
+        const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
+
+        if (enteredPassword === LOCKED_PASSWORD) {
+          setIsAuthenticated(true);
+          setCurrentPage(path);
+        } else {
+          // Redirect to homepage if password is incorrect or cancelled
+          setCurrentPage('product-design');
+          window.history.pushState(null, '', '/product-design');
+          if (enteredPassword !== null) {
+            alert("Incorrect password");
+          }
+        }
+        return;
+      }
+
       if (path === '/not-product-design') {
         setCurrentPage('not-product-design');
       } else if (path.startsWith('/project/')) {
@@ -173,11 +233,11 @@ function App() {
     };
 
     window.addEventListener('popstate', handlePopState);
-    
+
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, []);
+  }, [isAuthenticated]);
   
   // Move the gradient with the cursor on desktop
   // Soft delay for gradient following the cursor
@@ -569,24 +629,24 @@ function App() {
             </div>
           )}
 
-          {currentPage === '/project/app-recommendations' && (
-            <AppRecommendationsPage onNavigate={setCurrentPage} />
+          {currentPage === '/project/app-recommendations' && hasCheckedInitialAuth && (
+            <AppRecommendationsPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
           )}
 
           {currentPage === '/project/bland-canvas' && (
-            <BlandCanvasPage onNavigate={setCurrentPage} />
+            <BlandCanvasPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
           )}
 
-          {currentPage === '/project/developer-portal' && (
-            <DeveloperPortalPage onNavigate={setCurrentPage} />
+          {currentPage === '/project/developer-portal' && hasCheckedInitialAuth && (
+            <DeveloperPortalPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
           )}
 
           {currentPage === '/project/potluck' && (
-            <PotluckPage onNavigate={setCurrentPage} />
+            <PotluckPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
           )}
 
           {currentPage === '/project/stirworld-mobile-redesign' && (
-            <StirworldMobileRedesignPage onNavigate={setCurrentPage} />
+            <StirworldMobileRedesignPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
           )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}

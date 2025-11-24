@@ -502,8 +502,20 @@
   color: #000;
   mix-blend-mode: difference;
   line-height: 1.2;
-  text-decoration: underline;
-  text-underline-offset: 0.5vh;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background-color: #000;
 }
 
 @media (max-width: 768px) {
