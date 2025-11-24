@@ -513,15 +513,24 @@ body::before {
 }
 
 .highlight {
-  text-decoration: underline;
   color: #000;
   cursor: pointer;
   transition: opacity 0.2s ease;
-  text-decoration-skip-ink: none;
-  text-underline-offset: 0.1em;
-  text-decoration-thickness: 2px;
-  white-space: nowrap;
   mix-blend-mode: difference;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background-color: #000;
 }
 
 .highlight:hover {
