@@ -8,6 +8,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
+import PasswordModal from './PasswordModal';
 import AppRecommendationsPage from './pages/AppRecommendationsPage';
 import BlandCanvasPage from './pages/BlandCanvasPage';
 import DeveloperPortalPage from './pages/DeveloperPortalPage';
@@ -114,6 +115,8 @@ function App() {
   const [loadedImages, setLoadedImages] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasCheckedInitialAuth, setHasCheckedInitialAuth] = useState(false);
+  const [passwordModalOpen, setPasswordModalOpen] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState(null);
 
   // List of protected project paths
   const protectedPaths = ['/project/app-recommendations', '/project/developer-portal'];
@@ -121,6 +124,15 @@ function App() {
   // Check if a path is protected
   const isProtectedPath = (path) => {
     return ENABLE_PASSWORD_LOCK && protectedPaths.includes(path);
+  };
+
+  // Get project name from path
+  const getProjectName = (path) => {
+    const projectNames = {
+      '/project/app-recommendations': 'QuickBooks App Recommendations',
+      '/project/developer-portal': 'Intuit Developer Portal'
+    };
+    return projectNames[path] || 'This project';
   };
 
   // Function to open lightbox with specific image set
@@ -133,6 +145,32 @@ function App() {
   // Handle image load state
   const handleImageLoad = (imageName) => {
     setLoadedImages(prev => ({ ...prev, [imageName]: true }));
+  };
+
+  // Handle password submission
+  const handlePasswordSubmit = (enteredPassword) => {
+    if (enteredPassword === LOCKED_PASSWORD) {
+      setIsAuthenticated(true);
+      setPasswordModalOpen(false);
+      if (pendingNavigation) {
+        setCurrentPage(pendingNavigation);
+        setPendingNavigation(null);
+      }
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  // Handle password modal cancel
+  const handlePasswordCancel = () => {
+    setPasswordModalOpen(false);
+    setPendingNavigation(null);
+  };
+
+  // Handle request password
+  const handleRequestPassword = () => {
+    window.location.href = 'mailto:prakhar@newschool.edu?subject=Password Request for Portfolio Projects';
   };
 
   // Handle password-protected navigation
@@ -151,36 +189,18 @@ function App() {
       return;
     }
 
-    // Prompt for password
-    const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
-
-    if (enteredPassword === LOCKED_PASSWORD) {
-      setIsAuthenticated(true);
-      setCurrentPage(projectPath);
-    } else if (enteredPassword !== null) {
-      // User entered a password but it was wrong (null means they cancelled)
-      alert("Incorrect password");
-    }
+    // Show password modal
+    setPendingNavigation(projectPath);
+    setPasswordModalOpen(true);
   };
   
   // Check for password protection on initial load
   useEffect(() => {
     const initialPath = window.location.pathname;
     if (isProtectedPath(initialPath)) {
-      const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
-
-      if (enteredPassword === LOCKED_PASSWORD) {
-        setIsAuthenticated(true);
-        setCurrentPage(initialPath); // Navigate to the protected page
-        setHasCheckedInitialAuth(true);
-      } else {
-        // Stay on homepage if password is incorrect or cancelled
-        window.history.pushState(null, '', '/product-design');
-        setHasCheckedInitialAuth(true);
-        if (enteredPassword !== null) {
-          alert("Incorrect password");
-        }
-      }
+      setPendingNavigation(initialPath);
+      setPasswordModalOpen(true);
+      setHasCheckedInitialAuth(true);
     } else {
       // Not a protected path, mark as checked
       setHasCheckedInitialAuth(true);
@@ -207,19 +227,8 @@ function App() {
 
       // Check if navigating to a protected page
       if (isProtectedPath(path) && !isAuthenticated) {
-        const enteredPassword = prompt("This project requires a password. Please enter the password to continue:");
-
-        if (enteredPassword === LOCKED_PASSWORD) {
-          setIsAuthenticated(true);
-          setCurrentPage(path);
-        } else {
-          // Redirect to homepage if password is incorrect or cancelled
-          setCurrentPage('product-design');
-          window.history.pushState(null, '', '/product-design');
-          if (enteredPassword !== null) {
-            alert("Incorrect password");
-          }
-        }
+        setPendingNavigation(path);
+        setPasswordModalOpen(true);
         return;
       }
 
@@ -660,7 +669,16 @@ function App() {
         index={lightboxIndex}
         plugins={[Captions]}
       />
-      
+
+      {/* Password Modal */}
+      <PasswordModal
+        isOpen={passwordModalOpen}
+        onSubmit={handlePasswordSubmit}
+        onCancel={handlePasswordCancel}
+        onRequestPassword={handleRequestPassword}
+        projectName={pendingNavigation ? getProjectName(pendingNavigation) : null}
+      />
+
       <Analytics />
     </div>
   );
