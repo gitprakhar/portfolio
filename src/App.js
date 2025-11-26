@@ -371,7 +371,7 @@ function App() {
                 Not Product Design
               </a>
               <a href="mailto:prakhar@newschool.edu" className="nav-link">Contact</a>
-              <a href="https://drive.google.com/file/d/1tSF8Mf8vfXoduoP60PFWFKl2Cr87qwRg/view?usp=share_link" className="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a href="https://drive.google.com/file/d/1NbzEIrW7rFgaogPJ7VCnYA_oVjrgnwvZ/view?usp=drive_link" className="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
             <button
               className="menu-toggle"
@@ -433,7 +433,7 @@ function App() {
                   Not Product Design
                 </a>
                 <a href="mailto:prakhar@newschool.edu" className="mobile-nav-link">Contact</a>
-                <a href="https://drive.google.com/file/d/1tSF8Mf8vfXoduoP60PFWFKl2Cr87qwRg/view?usp=share_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://drive.google.com/file/d/1NbzEIrW7rFgaogPJ7VCnYA_oVjrgnwvZ/view?usp=drive_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
               </div>
               <div className="mobile-author-description">
                 Prakhar is a product designer and creative technologist who bridges design, code, and storytelling. Recent work includes <span className="highlight">QuickBooks App Recommendations</span>, the new <span className="highlight">Intuit Developer Portal</span>, a redesign of <span className="highlight">STIRworld's mobile website</span>, and <span className="highlight">Bland Canvas</span>, an AI tool for furniture upcycling.
