@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './PasswordModal.css';
 
 function PasswordModal({ isOpen, onSubmit, onCancel, onRequestPassword, projectName }) {
   const [password, setPassword] = useState('');
   const [hasError, setHasError] = useState(false);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
       setPassword('');
       setHasError(false);
+      // Focus the input after a small delay to ensure it works on mobile
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }, 100);
     }
   }, [isOpen]);
 
@@ -39,12 +46,12 @@ function PasswordModal({ isOpen, onSubmit, onCancel, onRequestPassword, projectN
         <h2 className="password-modal-title">{projectName || 'This project'} requires a password</h2>
         <form onSubmit={handleSubmit}>
           <input
+            ref={inputRef}
             type="password"
             value={password}
             onChange={handlePasswordChange}
             className={`password-modal-input ${hasError ? 'error' : ''}`}
             placeholder="Enter password"
-            autoFocus
           />
           <div className="password-modal-buttons">
             <button type="submit" className="password-modal-button primary">
