@@ -66,7 +66,7 @@ Creative Tools`}
     <div className="project-section">
         <h3 className="section-label">EXECUTION</h3>
         <h2 className="section-title">No Dataset, No Problem: Making My Own for Bland Canvas</h2>
-        <p className="section-body">To train the AI, I needed 100+ images of the IKEA MARIUS in its original form — same angles, same lighting, same object. But those images simply didn’t exist. Not online, not in datasets, not anywhere. So I wrote a script to render my own: rotating a 3D model of the stool, capturing it from multiple perspectives, and building a clean, consistent dataset from scratch.</p>
+        <p className="section-body">To train the AI, I needed a bunch of images of the IKEA MARIUS from different angles — enough for the model to really learn what this stool looks like. The problem? Those images didn't exist. I couldn't find hundreds of photos of the same stool online. So instead, I wrote a script to generate them myself: rotating a 3D model, capturing it from all sides, and building the dataset I needed from scratch.</p>
             <div className="section-image">
           <img src={datasetImg} alt="Dataset" />
         </div>
