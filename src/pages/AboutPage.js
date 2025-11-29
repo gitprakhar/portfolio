@@ -19,7 +19,7 @@ function AboutPage() {
               I started my career as a full-stack engineer, but I found myself increasingly drawn to the creative side—not just how things work, but how they feel and communicate. I've since worked on everything from QuickBooks at Intuit to leading design at STIRworld. What sets me apart is my ability to bridge both worlds—I'm equally comfortable in Figma as I am writing React code or experimenting with computer vision and motion capture.
             </p>
             <p>
-              These days, I'm exploring AI-native interfaces, building tools that blend interaction with emerging technology, and looking for opportunities where design thinking meets technical craft.
+              These days, I'm exploring AI-native interfaces, building tools that blend interaction with emerging technology.
             </p>
           </div>
           <div className="about-links">
