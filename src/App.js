@@ -14,6 +14,7 @@ import BlandCanvasPage from './pages/BlandCanvasPage';
 import DeveloperPortalPage from './pages/DeveloperPortalPage';
 import PotluckPage from './pages/PotluckPage';
 import StirworldMobileRedesignPage from './pages/StirworldMobileRedesignPage';
+import AboutPage from './pages/AboutPage';
 import avmImg from './images/art_direction/avm.jpg';
 import icImg from './images/art_direction/ic.jpg';
 import stirfriGif from './images/art_direction/stirfri.gif';
@@ -96,6 +97,7 @@ function App() {
   const getInitialPage = () => {
     const path = window.location.pathname;
     if (path === '/not-product-design') return 'not-product-design';
+    if (path === '/about') return 'about';
     if (path.startsWith('/project/')) return path; // Support project pages
     return 'product-design';
   };
@@ -211,6 +213,8 @@ function App() {
   useEffect(() => {
     if (currentPage === 'not-product-design') {
       window.history.pushState(null, '', '/not-product-design');
+    } else if (currentPage === 'about') {
+      window.history.pushState(null, '', '/about');
     } else if (currentPage === 'product-design') {
       window.history.pushState(null, '', '/product-design');
     } else if (currentPage.startsWith('/project/')) {
@@ -234,6 +238,8 @@ function App() {
 
       if (path === '/not-product-design') {
         setCurrentPage('not-product-design');
+      } else if (path === '/about') {
+        setCurrentPage('about');
       } else if (path.startsWith('/project/')) {
         setCurrentPage(path);
       } else {
@@ -363,14 +369,20 @@ function App() {
               >
                 Product Design
               </a>
-              <a 
-                href="/not-product-design" 
+              <a
+                href="/not-product-design"
                 className={`nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); }}
               >
                 Not Product Design
               </a>
-              <a href="mailto:prakhar@newschool.edu" className="nav-link">Contact</a>
+              <a
+                href="/about"
+                className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }}
+              >
+                About Me
+              </a>
               <a href="https://drive.google.com/file/d/1NbzEIrW7rFgaogPJ7VCnYA_oVjrgnwvZ/view?usp=drive_link" className="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
             <button
@@ -425,14 +437,20 @@ function App() {
                 >
                   Product Design
                 </a>
-                <a 
-                  href="/not-product-design" 
+                <a
+                  href="/not-product-design"
                   className={`mobile-nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); setIsMenuOpen(false); }}
                 >
                   Not Product Design
                 </a>
-                <a href="mailto:prakhar@newschool.edu" className="mobile-nav-link">Contact</a>
+                <a
+                  href="/about"
+                  className={`mobile-nav-link ${currentPage === 'about' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage('about'); setIsMenuOpen(false); }}
+                >
+                  About Me
+                </a>
                 <a href="https://drive.google.com/file/d/1NbzEIrW7rFgaogPJ7VCnYA_oVjrgnwvZ/view?usp=drive_link" className="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
               </div>
               <div className="mobile-author-description">
@@ -656,6 +674,10 @@ function App() {
 
           {currentPage === '/project/stirworld-mobile-redesign' && (
             <StirworldMobileRedesignPage onNavigate={setCurrentPage} handleProtectedNavigation={handleProtectedNavigation} enablePasswordLock={ENABLE_PASSWORD_LOCK} />
+          )}
+
+          {currentPage === 'about' && (
+            <AboutPage />
           )}
         </main>
   {/* Footer only for mobile, handled in CSS if needed */}

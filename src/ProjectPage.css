@@ -513,7 +513,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 4px;
+  bottom: 0.15em;
   height: 2px;
   background-color: #000;
 }

@@ -414,7 +414,7 @@ body::before {
   font-weight: 400;
   transition: opacity 0.2s ease;
   text-decoration-skip-ink: none;
-  text-underline-offset: 0.1em;
+  text-underline-offset: 0.25em;
   text-decoration-thickness: 1px;
   mix-blend-mode: difference;
 }
