@@ -23,7 +23,7 @@ function AboutPage() {
             </p>
           </div>
           <div className="about-links">
-            <a href="https://drive.google.com/file/d/1NbzEIrW7rFgaogPJ7VCnYA_oVjrgnwvZ/view?usp=drive_link" className="about-link" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="https://drive.google.com/file/d/1IHGyugHp6ajmqUXbKpvFxZ96nWFkUqqn/view?usp=sharing" className="about-link" target="_blank" rel="noopener noreferrer">Resume</a>
             <a href="https://www.linkedin.com/in/prakhar-mittal-0aba201a2/" className="about-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:prakhar@newschool.edu" className="about-link">Email</a>
           </div>
