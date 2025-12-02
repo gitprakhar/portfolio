@@ -404,32 +404,32 @@
   .project-page {
     padding: 12vh 40px 6vh 40px;
   }
-  
+
   .project-meta {
     flex-direction: column;
     gap: 3vh;
   }
-  
+
   .project-section {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   .project-section-highlight {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
     padding: 12vh 0;
   }
-  
+
   .subsection-images-row {
     width: 100%;
     margin-left: 0;
     flex-direction: column;
     gap: 3vh;
   }
-  
+
   .subsection-images-row .subsection-image {
     flex: none;
   }
@@ -445,6 +445,14 @@
 
   .side-by-side-image {
     flex: none;
+  }
+
+  .section-body {
+    max-width: 100%;
+  }
+
+  .subsection-text {
+    max-width: 100%;
   }
 }
 
