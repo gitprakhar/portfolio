@@ -485,7 +485,7 @@ function App() {
                 <div className="work-unit">
                   <div className="work-unit-text">
                     <h2 className="work-unit-title">Art Direction</h2>
-                    <p className="work-unit-description">Directed art for 10+ editorial series at STIRworld.</p>
+                    <p className="work-unit-description">Designed and directed 10+ editorial series at STIRworld, from visual concept to final production.</p>
                   </div>
                   <div className="work-unit-images">
                     <a href="https://www.stirworld.com/think-opinions-art-voices-matter-stir-original-series-on-issues-of-communities-at-the-margins" target="_blank" rel="noopener noreferrer">
