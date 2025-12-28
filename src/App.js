@@ -33,7 +33,7 @@ library.add(faBars, faTimes);
 
 // PASSWORD LOCK CONFIGURATION
 // Set to false to disable password protection for QuickBooks and Developer Portal
-const ENABLE_PASSWORD_LOCK = false;
+const ENABLE_PASSWORD_LOCK = true;
 const LOCKED_PASSWORD = "password";
 
 // Define image arrays for lightbox
