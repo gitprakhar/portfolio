@@ -27,7 +27,7 @@
 }
 
 .project-title {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 6vh;
   font-weight: 400;
   line-height: 1.2;
@@ -41,7 +41,7 @@
 }
 
 .project-description {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.2vh;
   font-weight: 400;
   line-height: 1.5;
@@ -84,7 +84,7 @@
 }
 
 .meta-label {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 1.6vh;
   font-weight: 400;
   margin: 0;
@@ -95,7 +95,7 @@
 }
 
 .meta-value {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 1.8vh;
   font-weight: 400;
   line-height: 1.4;
@@ -136,7 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.5vh;
   color: #000;
   mix-blend-mode: difference;
@@ -161,7 +161,7 @@
 }
 
 .section-label {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 1.4vh;
   font-weight: 400;
   color: #000;
@@ -173,7 +173,7 @@
 }
 
 .section-title {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 4.5vh;
   font-weight: 400;
   color: #000;
@@ -184,7 +184,7 @@
 }
 
 .section-body {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.2vh;
   font-weight: 400;
   color: #000;
@@ -207,7 +207,7 @@
 }
 
 .subsection-title {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 3.5vh;
   font-weight: 400;
   color: #000;
@@ -217,7 +217,7 @@
 }
 
 .subsection-heading {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.8vh;
   font-weight: 400;
   color: #000;
@@ -227,7 +227,7 @@
 }
 
 .subsection-text {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.2vh;
   font-weight: 400;
   color: #000;
@@ -239,7 +239,7 @@
 }
 
 .subsection ul {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.2vh;
   font-weight: 400;
   color: #000;
@@ -252,7 +252,7 @@
 }
 
 .project-section ul {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.2vh;
   font-weight: 400;
   color: #000;
@@ -302,7 +302,7 @@
 }
 
 .subsection-image-caption {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2vh;
   font-weight: 400;
   font-style: italic;
@@ -493,7 +493,7 @@
 }
 
 .nav-label {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 1.6vh;
   font-weight: 400;
   color: #000;
@@ -504,7 +504,7 @@
 }
 
 .nav-title {
-  font-family: 'AppleGothic', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   font-size: 2.8vh;
   font-weight: 400;
   color: #000;
