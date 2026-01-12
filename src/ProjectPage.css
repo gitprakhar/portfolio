@@ -85,7 +85,7 @@
 
 .meta-label {
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.6vh;
+  font-size: 1.8vh;
   font-weight: 400;
   margin: 0;
   color: #000;
@@ -162,7 +162,7 @@
 
 .section-label {
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.4vh;
+  font-size: 1.6vh;
   font-weight: 400;
   color: #000;
   margin: 0;
@@ -373,7 +373,7 @@
   }
 
   .meta-label {
-    font-size: 1.5vh;
+    font-size: 1.7vh;
   }
 
   .meta-value {
@@ -494,7 +494,7 @@
 
 .nav-label {
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.6vh;
+  font-size: 1.8vh;
   font-weight: 400;
   color: #000;
   mix-blend-mode: difference;
@@ -544,7 +544,7 @@
   }
 
   .nav-label {
-    font-size: 1.5vh;
+    font-size: 1.7vh;
   }
 
   .nav-title {
