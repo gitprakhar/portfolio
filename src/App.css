@@ -551,7 +551,7 @@ body::before {
   animation: linkEnter 800ms cubic-bezier(.2,.9,.2,1) 400ms both;
 }
 
-/* Work Units - Not Product Design page */
+/* Work Units - Visual Design page */
 .work-units-container {
   width: 100%;
   display: flex;
@@ -582,6 +582,15 @@ body::before {
 
 .work-unit:not(:last-child) {
   margin-bottom: 8vh;
+}
+
+/* Vibe Coding: same layout as Visual Design, images 16/9, two per row */
+.work-units-container.vibe-coding .work-unit-images {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.work-units-container.vibe-coding .work-unit-image {
+  aspect-ratio: 16/9;
 }
 
 .work-unit-text {

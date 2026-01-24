@@ -27,6 +27,9 @@ import oblivionImg from './images/installations/oblivion.jpg';
 import quantumImg from './images/installations/quantum.jpg';
 import quantumImg2 from './images/installations/quantum2.jpg';
 import quantumImg3 from './images/installations/quantum3.jpg';
+import vibeAnyColorsImg from './images/vibe-coding/any-colors-you-like.png';
+import vibeAlmostAnythingImg from './images/vibe-coding/almost-anything.png';
+import blandCanvasImg from './images/bland-canvas/bland-canvas.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
 library.add(faBars, faTimes);
@@ -97,6 +100,7 @@ function App() {
   const getInitialPage = () => {
     const path = window.location.pathname;
     if (path === '/not-product-design') return 'not-product-design';
+    if (path === '/vibe-coding') return 'vibe-coding';
     if (path === '/about') return 'about';
     if (path.startsWith('/project/')) return path; // Support project pages
     return 'product-design';
@@ -213,6 +217,8 @@ function App() {
   useEffect(() => {
     if (currentPage === 'not-product-design') {
       window.history.pushState(null, '', '/not-product-design');
+    } else if (currentPage === 'vibe-coding') {
+      window.history.pushState(null, '', '/vibe-coding');
     } else if (currentPage === 'about') {
       window.history.pushState(null, '', '/about');
     } else if (currentPage === 'product-design') {
@@ -238,6 +244,8 @@ function App() {
 
       if (path === '/not-product-design') {
         setCurrentPage('not-product-design');
+      } else if (path === '/vibe-coding') {
+        setCurrentPage('vibe-coding');
       } else if (path === '/about') {
         setCurrentPage('about');
       } else if (path.startsWith('/project/')) {
@@ -370,18 +378,25 @@ function App() {
                 Product Design
               </a>
               <a
+                href="/vibe-coding"
+                className={`nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); }}
+              >
+                Vibe Code
+              </a>
+              <a
                 href="/not-product-design"
                 className={`nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); }}
               >
-                Not Product Design
+                Visual Design
               </a>
               <a
                 href="/about"
                 className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }}
               >
-                About Me
+                About
               </a>
               <a href="https://drive.google.com/file/d/1IHGyugHp6ajmqUXbKpvFxZ96nWFkUqqn/view?usp=sharing" className="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
@@ -438,11 +453,18 @@ function App() {
                   Product Design
                 </a>
                 <a
+                  href="/vibe-coding"
+                  className={`mobile-nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); setIsMenuOpen(false); }}
+                >
+                  Vibe Code
+                </a>
+                <a
                   href="/not-product-design"
                   className={`mobile-nav-link ${currentPage === 'not-product-design' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); setCurrentPage('not-product-design'); setIsMenuOpen(false); }}
                 >
-                  Not Product Design
+                  Visual Design
                 </a>
                 <a
                   href="/about"
@@ -650,6 +672,51 @@ function App() {
                       onClick={() => openLightbox(installationImages, 2)}
                       style={{ cursor: 'pointer', opacity: loadedImages['quantum'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {currentPage === 'vibe-coding' && (
+            <div className="content-container">
+              <div className="work-units-container vibe-coding">
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Experiments and tools</h2>
+                    <p className="work-unit-description">Built with React using Cursor.</p>
+                  </div>
+                  <div className="work-unit-images">
+                    <a href="https://anycolorsyoulike.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={vibeAnyColorsImg}
+                        alt="Any Colors You Like"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('vibeAnyColors')}
+                        style={{ opacity: loadedImages['vibeAnyColors'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                    </a>
+                    <a href="https://almostanything.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={vibeAlmostAnythingImg}
+                        alt="Almost Anything"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('vibeAlmostAnything')}
+                        style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                    </a>
+                    <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} style={{ cursor: 'pointer' }}>
+                      <img
+                        src={blandCanvasImg}
+                        alt="Bland Canvas"
+                        className="work-unit-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('vibeBlandCanvas')}
+                        style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
