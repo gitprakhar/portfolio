@@ -707,16 +707,6 @@ function App() {
                         style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                       />
                     </a>
-                    <a href="/project/bland-canvas" onClick={(e) => { e.preventDefault(); setCurrentPage('/project/bland-canvas'); }} style={{ cursor: 'pointer' }}>
-                      <img
-                        src={blandCanvasImg}
-                        alt="Bland Canvas"
-                        className="work-unit-image"
-                        loading="lazy"
-                        onLoad={() => handleImageLoad('vibeBlandCanvas')}
-                        style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                      />
-                    </a>
                   </div>
                 </div>
               </div>
