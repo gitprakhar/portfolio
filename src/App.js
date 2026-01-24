@@ -29,6 +29,7 @@ import quantumImg2 from './images/installations/quantum2.jpg';
 import quantumImg3 from './images/installations/quantum3.jpg';
 import vibeAnyColorsImg from './images/vibe-coding/any-colors-you-like.png';
 import vibeAlmostAnythingImg from './images/vibe-coding/almost-anything.png';
+import vibeBlandCanvasImg from './images/vibe-coding/bland-canvas.png';
 import blandCanvasImg from './images/bland-canvas/bland-canvas.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
@@ -707,6 +708,14 @@ function App() {
                         style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                       />
                     </a>
+                    <img
+                      src={vibeBlandCanvasImg}
+                      alt="Bland Canvas"
+                      className="work-unit-image"
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('vibeBlandCanvas')}
+                      style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                    />
                   </div>
                 </div>
               </div>
