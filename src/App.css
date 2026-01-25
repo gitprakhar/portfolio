@@ -765,7 +765,15 @@ body::before {
     grid-template-columns: 1fr;
     gap: 1.5vh;
   }
-  
+
+  .work-units-container.vibe-coding .work-unit-images {
+    grid-template-columns: 1fr;
+  }
+
+  .work-units-container.vibe-coding .work-unit-image {
+    aspect-ratio: 1/1;
+  }
+
   .work-unit-videos {
     grid-template-columns: 1fr;
     gap: 1.5vh;

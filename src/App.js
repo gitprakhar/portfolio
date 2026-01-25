@@ -383,7 +383,7 @@ function App() {
                 className={`nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); }}
               >
-                Vibe Code
+                Code
               </a>
               <a
                 href="/not-product-design"
@@ -458,7 +458,7 @@ function App() {
                   className={`mobile-nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); setIsMenuOpen(false); }}
                 >
-                  Vibe Code
+                  Code
                 </a>
                 <a
                   href="/not-product-design"
@@ -684,8 +684,8 @@ function App() {
               <div className="work-units-container vibe-coding">
                 <div className="work-unit">
                   <div className="work-unit-text">
-                    <h2 className="work-unit-title">Experiments and tools</h2>
-                    <p className="work-unit-description">Built with React using Cursor.</p>
+                    <h2 className="work-unit-title">Vibe code</h2>
+                    <p className="work-unit-description">Experiments I designed and shipped using Cursor and Claude Code</p>
                   </div>
                   <div className="work-unit-images">
                     <a href="https://anycolorsyoulike.vercel.app/" target="_blank" rel="noopener noreferrer">
