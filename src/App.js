@@ -708,6 +708,7 @@ function App() {
                         style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                       />
                     </a>
+                    <a href="https://blandcanvas.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <img
                       src={vibeBlandCanvasImg}
                       alt="Bland Canvas"
@@ -716,6 +717,7 @@ function App() {
                       onLoad={() => handleImageLoad('vibeBlandCanvas')}
                       style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
                     />
+                    </a>
                   </div>
                 </div>
               </div>
