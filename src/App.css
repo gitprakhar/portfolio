@@ -593,6 +593,59 @@ body::before {
   aspect-ratio: 16/9;
 }
 
+.vibe-projects {
+  align-items: start;
+}
+
+.work-units-container.vibe-coding .work-unit-images.vibe-projects {
+  gap: 3vh;
+}
+
+.work-units-container.vibe-coding .work-unit-images.installations-grid {
+  gap: 3vh;
+}
+
+.vibe-project {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vh;
+  text-decoration: none;
+  color: inherit;
+}
+
+.vibe-project-media {
+  width: 100%;
+}
+
+.vibe-project-image {
+  width: 100%;
+  height: auto;
+}
+
+.vibe-project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vh;
+  text-align: left;
+  mix-blend-mode: difference;
+}
+
+.vibe-project-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 2.4vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+.vibe-project-description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.8vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
 .work-unit-text {
   display: flex;
   flex-direction: column;
@@ -622,8 +675,47 @@ body::before {
 .work-unit-images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2vh;
+  gap: 3vh;
   width: 100%;
+}
+
+.work-units-container.vibe-coding .work-unit-images.installations-grid {
+  gap: 3vh;
+}
+
+.installation-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vh;
+}
+
+.installation-image {
+  width: 100%;
+  height: auto;
+}
+
+.installation-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vh;
+  text-align: left;
+  mix-blend-mode: difference;
+}
+
+.installation-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 2.4vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+.installation-description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.8vh;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
 }
 
 .work-unit-image {
@@ -637,7 +729,7 @@ body::before {
 .work-unit-videos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2vh;
+  gap: 3vh;
   width: 100%;
 }
 
@@ -768,6 +860,10 @@ body::before {
 
   .work-units-container.vibe-coding .work-unit-images {
     grid-template-columns: 1fr;
+  }
+
+  .work-units-container.vibe-coding .work-unit-images.installations-grid {
+    gap: 3vh;
   }
 
   .work-units-container.vibe-coding .work-unit-image {

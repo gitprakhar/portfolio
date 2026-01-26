@@ -23,13 +23,13 @@ import stirringDreamsGif from './images/art_direction/stirring-dreams.gif';
 import panelsImg from './images/physical/panels2.jpeg';
 import toteImg from './images/physical/tote.jpg';
 import noWrongAnswersImg from './images/installations/nowronganswers.jpeg';
-import oblivionImg from './images/installations/oblivion.jpg';
 import quantumImg from './images/installations/quantum.jpg';
 import quantumImg2 from './images/installations/quantum2.jpg';
 import quantumImg3 from './images/installations/quantum3.jpg';
 import vibeAnyColorsImg from './images/vibe-coding/any-colors-you-like.png';
 import vibeAlmostAnythingImg from './images/vibe-coding/almost-anything.png';
 import vibeBlandCanvasImg from './images/vibe-coding/bland-canvas.png';
+import vibeOblivionCameraImg from './images/vibe-coding/oblivion-camera.jpg';
 import blandCanvasImg from './images/bland-canvas/bland-canvas.jpg';
 
 // Register icons in the library per Font Awesome React usage docs
@@ -71,12 +71,6 @@ const installationImages = [
     description: "An immersive installation that invites visitors to reflect on the core of human identity in the age of AI."
   },
   { 
-    src: oblivionImg, 
-    alt: "Oblivion installation",
-    title: "Projection Mapping Oblivion",
-    description: "This setup hides collapse behind perfect projections, pulling viewers into a tech-induced oblivion."
-  },
-  { 
     src: quantumImg, 
     alt: "Quantum installation",
     title: "Fleeting States + Measured Values",
@@ -93,6 +87,12 @@ const installationImages = [
     alt: "Quantum installation process",
     title: "Fleeting States + Measured Values",
     description: "Behind-the-scenes view of the installation setup and technical implementation."
+  },
+  { 
+    src: vibeOblivionCameraImg,
+    alt: "Oblivion Camera installation",
+    title: "Oblivion Camera",
+    description: "Placeholder description."
   }
 ];
 
@@ -510,7 +510,7 @@ function App() {
                     <h2 className="work-unit-title">Art Direction</h2>
                     <p className="work-unit-description">Designed and directed 10+ editorial series at STIRworld, from visual concept to final production.</p>
                   </div>
-                  <div className="work-unit-images">
+                  <div className="work-unit-images installations-grid">
                     <a href="https://www.stirworld.com/think-opinions-art-voices-matter-stir-original-series-on-issues-of-communities-at-the-margins" target="_blank" rel="noopener noreferrer">
                       <img
                         src={avmImg}
@@ -618,7 +618,7 @@ function App() {
                     <h2 className="work-unit-title">Print & Physical</h2>
                     <p className="work-unit-description">Designed posters, objects, and booth materials.</p>
                   </div>
-                  <div className="work-unit-images">
+                  <div className="work-unit-images installations-grid">
                     <img
                       src={panelsImg}
                       alt="Print/Physical work 1"
@@ -640,41 +640,6 @@ function App() {
                   </div>
                 </div>
 
-                <div className="work-unit">
-                  <div className="work-unit-text">
-                    <h2 className="work-unit-title">Installations</h2>
-                    <p className="work-unit-description">Built interactive installations using physical computing and projection mapping.</p>
-                  </div>
-                  <div className="work-unit-images">
-                    <img
-                      src={noWrongAnswersImg}
-                      alt="No Wrong Answers installation"
-                      className="work-unit-image"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('noWrongAnswers')}
-                      onClick={() => openLightbox(installationImages, 0)}
-                      style={{ cursor: 'pointer', opacity: loadedImages['noWrongAnswers'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                    />
-                    <img
-                      src={oblivionImg}
-                      alt="Oblivion installation"
-                      className="work-unit-image"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('oblivion')}
-                      onClick={() => openLightbox(installationImages, 1)}
-                      style={{ cursor: 'pointer', opacity: loadedImages['oblivion'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                    />
-                    <img
-                      src={quantumImg}
-                      alt="Quantum installation"
-                      className="work-unit-image"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('quantum')}
-                      onClick={() => openLightbox(installationImages, 2)}
-                      style={{ cursor: 'pointer', opacity: loadedImages['quantum'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           )}
@@ -687,39 +652,127 @@ function App() {
                     <h2 className="work-unit-title">Vibe code</h2>
                     <p className="work-unit-description">Experiments I designed and shipped using Cursor and Claude Code</p>
                   </div>
-                  <div className="work-unit-images">
-                    <a href="https://anycolorsyoulike.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={vibeAnyColorsImg}
-                        alt="Any Colors You Like"
-                        className="work-unit-image"
-                        loading="lazy"
-                        onLoad={() => handleImageLoad('vibeAnyColors')}
-                        style={{ opacity: loadedImages['vibeAnyColors'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                      />
+                  <div className="work-unit-images vibe-projects">
+                    <a
+                      href="https://anycolorsyoulike.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vibe-project"
+                    >
+                      <div className="vibe-project-media">
+                        <img
+                          src={vibeAnyColorsImg}
+                          alt="Any Colors You Like"
+                          className="work-unit-image vibe-project-image"
+                          loading="lazy"
+                          onLoad={() => handleImageLoad('vibeAnyColors')}
+                          style={{ opacity: loadedImages['vibeAnyColors'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                        />
+                      </div>
+                      <div className="vibe-project-text">
+                        <h3 className="vibe-project-title">Any Colors You Like</h3>
+                        <p className="vibe-project-description">Generate gradients from a feeling</p>
+                      </div>
                     </a>
-                    <a href="https://almostanything.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={vibeAlmostAnythingImg}
-                        alt="Almost Anything"
-                        className="work-unit-image"
-                        loading="lazy"
-                        onLoad={() => handleImageLoad('vibeAlmostAnything')}
-                        style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                      />
+                    <a
+                      href="https://almostanything.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vibe-project"
+                    >
+                      <div className="vibe-project-media">
+                        <img
+                          src={vibeAlmostAnythingImg}
+                          alt="Almost Anything"
+                          className="work-unit-image vibe-project-image"
+                          loading="lazy"
+                          onLoad={() => handleImageLoad('vibeAlmostAnything')}
+                          style={{ opacity: loadedImages['vibeAlmostAnything'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                        />
+                      </div>
+                      <div className="vibe-project-text">
+                        <h3 className="vibe-project-title">Almost Anything</h3>
+                        <p className="vibe-project-description">A daily drawing game with one shared shape</p>
+                      </div>
                     </a>
-                    <a href="https://blandcanvas.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={vibeBlandCanvasImg}
-                      alt="Bland Canvas"
-                      className="work-unit-image"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('vibeBlandCanvas')}
-                      style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                    />
+                    <a
+                      href="https://blandcanvas.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vibe-project"
+                    >
+                      <div className="vibe-project-media">
+                        <img
+                          src={vibeBlandCanvasImg}
+                          alt="Bland Canvas"
+                          className="work-unit-image vibe-project-image"
+                          loading="lazy"
+                          onLoad={() => handleImageLoad('vibeBlandCanvas')}
+                          style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                        />
+                      </div>
+                      <div className="vibe-project-text">
+                        <h3 className="vibe-project-title">Bland Canvas</h3>
+                        <p className="vibe-project-description">Generate upcycling ideas for everyday furniture</p>
+                      </div>
                     </a>
                   </div>
                 </div>
+                {/*
+                <div className="work-unit">
+                  <div className="work-unit-text">
+                    <h2 className="work-unit-title">Installations</h2>
+                    <p className="work-unit-description">Built interactive installations using physical computing and projection mapping.</p>
+                  </div>
+                  <div className="work-unit-images installations-grid">
+                    <div className="installation-item">
+                      <img
+                        src={noWrongAnswersImg}
+                        alt="No Wrong Answers installation"
+                        className="work-unit-image installation-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('noWrongAnswers')}
+                        onClick={() => openLightbox(installationImages, 0)}
+                        style={{ cursor: 'pointer', opacity: loadedImages['noWrongAnswers'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                      <div className="installation-text">
+                        <h3 className="installation-title">No Wrong Answers</h3>
+                        <p className="installation-description">Placeholder description for this installation.</p>
+                      </div>
+                    </div>
+                    <div className="installation-item">
+                      <img
+                        src={quantumImg}
+                        alt="Quantum installation"
+                        className="work-unit-image installation-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('quantum')}
+                        onClick={() => openLightbox(installationImages, 1)}
+                        style={{ cursor: 'pointer', opacity: loadedImages['quantum'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                      <div className="installation-text">
+                        <h3 className="installation-title">Fleeting States + Measured Values</h3>
+                        <p className="installation-description">Placeholder description for this installation.</p>
+                      </div>
+                    </div>
+                    <div className="installation-item">
+                      <img
+                        src={vibeOblivionCameraImg}
+                        alt="Oblivion Camera installation"
+                        className="work-unit-image installation-image"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad('oblivionCamera')}
+                        onClick={() => openLightbox(installationImages, 2)}
+                        style={{ cursor: 'pointer', opacity: loadedImages['oblivionCamera'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                      />
+                      <div className="installation-text">
+                        <h3 className="installation-title">Oblivion Camera</h3>
+                        <p className="installation-description">Placeholder description for this installation.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                */}
               </div>
             </div>
           )}
