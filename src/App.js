@@ -101,7 +101,7 @@ function App() {
   const getInitialPage = () => {
     const path = window.location.pathname;
     if (path === '/not-product-design') return 'not-product-design';
-    if (path === '/vibe-coding') return 'vibe-coding';
+    if (path === '/code') return 'code';
     if (path === '/about') return 'about';
     if (path.startsWith('/project/')) return path; // Support project pages
     return 'product-design';
@@ -218,8 +218,8 @@ function App() {
   useEffect(() => {
     if (currentPage === 'not-product-design') {
       window.history.pushState(null, '', '/not-product-design');
-    } else if (currentPage === 'vibe-coding') {
-      window.history.pushState(null, '', '/vibe-coding');
+    } else if (currentPage === 'code') {
+      window.history.pushState(null, '', '/code');
     } else if (currentPage === 'about') {
       window.history.pushState(null, '', '/about');
     } else if (currentPage === 'product-design') {
@@ -245,8 +245,8 @@ function App() {
 
       if (path === '/not-product-design') {
         setCurrentPage('not-product-design');
-      } else if (path === '/vibe-coding') {
-        setCurrentPage('vibe-coding');
+      } else if (path === '/code') {
+        setCurrentPage('code');
       } else if (path === '/about') {
         setCurrentPage('about');
       } else if (path.startsWith('/project/')) {
@@ -379,9 +379,9 @@ function App() {
                 Product Design
               </a>
               <a
-                href="/vibe-coding"
-                className={`nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); }}
+                href="/code"
+                className={`nav-link ${currentPage === 'code' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); setCurrentPage('code'); }}
               >
                 Code
               </a>
@@ -454,9 +454,9 @@ function App() {
                   Product Design
                 </a>
                 <a
-                  href="/vibe-coding"
-                  className={`mobile-nav-link ${currentPage === 'vibe-coding' ? 'active' : ''}`}
-                  onClick={(e) => { e.preventDefault(); setCurrentPage('vibe-coding'); setIsMenuOpen(false); }}
+                  href="/code"
+                  className={`mobile-nav-link ${currentPage === 'code' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage('code'); setIsMenuOpen(false); }}
                 >
                   Code
                 </a>
@@ -644,15 +644,36 @@ function App() {
             </div>
           )}
 
-          {currentPage === 'vibe-coding' && (
+          {currentPage === 'code' && (
             <div className="content-container">
               <div className="work-units-container vibe-coding">
                 <div className="work-unit">
                   <div className="work-unit-text">
-                    <h2 className="work-unit-title">Vibe code</h2>
+                    <h2 className="work-unit-title">Web Apps</h2>
                     <p className="work-unit-description">Experiments I designed and shipped using Cursor and Claude Code</p>
                   </div>
                   <div className="work-unit-images vibe-projects">
+                    <a
+                      href="https://blandcanvas.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vibe-project"
+                    >
+                      <div className="vibe-project-media">
+                        <img
+                          src={vibeBlandCanvasImg}
+                          alt="Bland Canvas"
+                          className="work-unit-image vibe-project-image"
+                          loading="lazy"
+                          onLoad={() => handleImageLoad('vibeBlandCanvas')}
+                          style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
+                        />
+                      </div>
+                      <div className="vibe-project-text">
+                        <h3 className="vibe-project-title">Bland Canvas</h3>
+                        <p className="vibe-project-description">Generate upcycling ideas for everyday furniture</p>
+                      </div>
+                    </a>
                     <a
                       href="https://anycolorsyoulike.vercel.app/"
                       target="_blank"
@@ -693,27 +714,6 @@ function App() {
                       <div className="vibe-project-text">
                         <h3 className="vibe-project-title">Almost Anything</h3>
                         <p className="vibe-project-description">A daily drawing game with one shared shape</p>
-                      </div>
-                    </a>
-                    <a
-                      href="https://blandcanvas.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="vibe-project"
-                    >
-                      <div className="vibe-project-media">
-                        <img
-                          src={vibeBlandCanvasImg}
-                          alt="Bland Canvas"
-                          className="work-unit-image vibe-project-image"
-                          loading="lazy"
-                          onLoad={() => handleImageLoad('vibeBlandCanvas')}
-                          style={{ opacity: loadedImages['vibeBlandCanvas'] ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-                        />
-                      </div>
-                      <div className="vibe-project-text">
-                        <h3 className="vibe-project-title">Bland Canvas</h3>
-                        <p className="vibe-project-description">Generate upcycling ideas for everyday furniture</p>
                       </div>
                     </a>
                   </div>
