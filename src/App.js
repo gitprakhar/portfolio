@@ -101,7 +101,7 @@ function App() {
   const getInitialPage = () => {
     const path = window.location.pathname;
     if (path === '/not-product-design') return 'not-product-design';
-    if (path === '/code') return 'code';
+    if (path === '/code' || path === '/vibe-coding') return 'code';
     if (path === '/about') return 'about';
     if (path.startsWith('/project/')) return path; // Support project pages
     return 'product-design';
@@ -245,7 +245,7 @@ function App() {
 
       if (path === '/not-product-design') {
         setCurrentPage('not-product-design');
-      } else if (path === '/code') {
+      } else if (path === '/code' || path === '/vibe-coding') {
         setCurrentPage('code');
       } else if (path === '/about') {
         setCurrentPage('about');
