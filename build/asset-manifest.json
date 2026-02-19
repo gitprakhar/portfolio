@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e3cedb1.css",
-    "main.js": "/static/js/main.0b874829.js",
+    "main.css": "/static/css/main.bb5da0b6.css",
+    "main.js": "/static/js/main.a7bf0c1e.js",
     "static/media/stirfri.gif": "/static/media/stirfri.970ab7c83fd7fd657169.gif",
     "static/media/channels.gif": "/static/media/channels.a6127e941ab2b602eb43.gif",
     "static/media/onboardingflow.gif": "/static/media/onboardingflow.0846cb55cd0357c03ddd.gif",
@@ -27,15 +27,15 @@
     "static/media/flyoutmenu.gif": "/static/media/flyoutmenu.a50e11783f84338769c0.gif",
     "static/media/snooze.gif": "/static/media/snooze.c4c8fcc395946f6b1631.gif",
     "static/media/panels2.jpeg": "/static/media/panels2.07339445783243e3f94d.jpeg",
-    "static/media/oblivion.jpg": "/static/media/oblivion.89235987a828e5ba5e1d.jpg",
     "static/media/affinity-map.png": "/static/media/affinity-map.42516427e9e92d67bb3f.png",
     "static/media/new-filter-system.jpg": "/static/media/new-filter-system.0ab7ffc402e2d7d49f12.jpg",
     "static/media/add-as-a-task.gif": "/static/media/add-as-a-task.d12ce88b8245567f5b7b.gif",
     "static/media/app-recommendations.gif": "/static/media/app-recommendations.aed43d2696993180f8fc.gif",
+    "static/media/bland-canvas.png": "/static/media/bland-canvas.d7b60d7376bc2e3b9a65.png",
     "static/media/appmarketplace.png": "/static/media/appmarketplace.0afd593972bf46d7bbe6.png",
     "static/media/old-filter-system.jpg": "/static/media/old-filter-system.569aed191ba31d42dd53.jpg",
     "static/media/from-others.jpg": "/static/media/from-others.d13bc4b90c858da08507.jpg",
-    "static/media/any-colors-you-like.png": "/static/media/any-colors-you-like.0f3cc45d5ff918ed508c.png",
+    "static/media/any-colors-you-like.png": "/static/media/any-colors-you-like.6f840180750bfc15bc7a.png",
     "static/media/from-ai.jpeg": "/static/media/from-ai.ad357c94b1cecb47ea63.jpeg",
     "static/media/solution-4.gif": "/static/media/solution-4.11a8e63d6379812a8856.gif",
     "static/media/solution-3.gif": "/static/media/solution-3.6f565ec917554023d764.gif",
@@ -50,6 +50,7 @@
     "static/media/profile-picture.jpg": "/static/media/profile-picture.35f75a2cdcf8f568fbe1.jpg",
     "static/media/homepage-hero.jpg": "/static/media/homepage-hero.308c4d9574189f578707.jpg",
     "static/media/dataset.jpeg": "/static/media/dataset.794f5036cf7687e2ae3b.jpeg",
+    "static/media/oblivion-camera.jpg": "/static/media/oblivion-camera.6bb4ea2557acc944e265.jpg",
     "static/media/transformation.png": "/static/media/transformation.538a471593449e149b03.png",
     "static/media/prompt-is-a-vibe.jpg": "/static/media/prompt-is-a-vibe.36e3574e3342117cee96.jpg",
     "static/media/differenttimesaverpatterns.png": "/static/media/differenttimesaverpatterns.49f4f7277e0bc778e0b0.png",
@@ -79,11 +80,11 @@
     "static/media/avm.jpg": "/static/media/avm.5a39ff359a4a9954d913.jpg",
     "static/media/fifa-arenas.jpg": "/static/media/fifa-arenas.56ea42d1a70dab39ed03.jpg",
     "index.html": "/index.html",
-    "main.8e3cedb1.css.map": "/static/css/main.8e3cedb1.css.map",
-    "main.0b874829.js.map": "/static/js/main.0b874829.js.map"
+    "main.bb5da0b6.css.map": "/static/css/main.bb5da0b6.css.map",
+    "main.a7bf0c1e.js.map": "/static/js/main.a7bf0c1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e3cedb1.css",
-    "static/js/main.0b874829.js"
+    "static/css/main.bb5da0b6.css",
+    "static/js/main.a7bf0c1e.js"
   ]
 }
